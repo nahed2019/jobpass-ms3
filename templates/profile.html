@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JobPass</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
     {% for basic in basics %}
         {{ basic.first_name }}<br>
         {{ basic.phone }}<br>
@@ -13,5 +8,5 @@
         {{ basic.cur_title }}<br>
         {{ basic.about_me }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
