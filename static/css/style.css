@@ -6,9 +6,18 @@
   box-sizing: border-box;
 }
 
+.flashes{
+  background-color: #f3a7a7;
+  max-height: 50px;
+  padding: 10px 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+
+}
+
 /* ------------------------------------------------NAVBAR */
-.nav-bg{
-    background-color: #4a6274;
+.nav-bg {
+  background-color: #4a6274;
 }
 
 .navbar-brand {
@@ -28,3 +37,35 @@
   padding-left: 5px;
 }
 
+/* ------------------------------------------------NAVBAR */
+
+.custum-card{
+    background-color:rgb(247, 245, 245) ;
+}
+
+.icon-color {
+  color: #f3a7a7;
+  background-color: #4a6274;
+  size: 32px;
+}
+
+.btn-large {
+  color: #f3a7a7;
+  background-color: #4a6274;
+  height: 50px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.btn-large:hover, .btn-large:focus {
+    color: #4a6274;
+  background-color: #f3a7a7;
+}
+
+.h2-color {
+  color: #4a6274;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+}

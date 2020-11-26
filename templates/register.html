@@ -1,8 +1,8 @@
 {% extends "base.html" %} {% block content %}
 
-    <h2 class="text-center p-3" >Register</h2>
+    <h2 class="text-center p-5 h2-color " >Register</h2>
 
-<div class="justify-content-center card col-md-10 offset-md-1">
+<div class="justify-content-center card col-md-10 offset-md-1 custum-card">
 <div class="card-body">
   <form class="card-text" method="POST" action="{{ url_for('register') }}">
     <div class="form-group">
@@ -10,9 +10,9 @@
       <div class="row align-items-center">
         <div class="col-12 pt-3">
           <label class="sr-only" for="username">Username</label>
-          <div class="input-group mb-2">
+          <div class="input-group mb-4">
             <div class="input-group-prepend">
-              <div class="input-group-text">
+              <div class="input-group-text icon-color">
                 <i class="fas fa-user-plus"></i>
               </div>
             </div>
@@ -34,9 +34,9 @@
       <div class="row align-items-center">
         <div class="col-12 pt-3">
           <label class="sr-only" for="password">Password</label>
-          <div class="input-group mb-2">
+          <div class="input-group mb-4">
             <div class="input-group-prepend">
-              <div class="input-group-text">
+              <div class="input-group-text icon-color">
                 <i class="fas fa-user-lock"></i>
               </div>
             </div>
