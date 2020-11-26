@@ -6,13 +6,12 @@
   box-sizing: border-box;
 }
 
-.flashes{
+.flashes {
   background-color: #f3a7a7;
   max-height: 50px;
-  padding: 10px 5px;
+  padding: 15px 5px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-
 }
 
 /* ------------------------------------------------NAVBAR */
@@ -37,10 +36,10 @@
   padding-left: 5px;
 }
 
-/* ------------------------------------------------NAVBAR */
+/* ------------------------------------------------Register/login */
 
-.custum-card{
-    background-color:rgb(247, 245, 245) ;
+.custom-card {
+  background-color: rgb(247, 245, 245);
 }
 
 .icon-color {
@@ -58,14 +57,21 @@
   font-size: 30px;
 }
 
-.btn-large:hover, .btn-large:focus {
-    color: #4a6274;
+.btn-large:hover,
+.btn-large:focus {
+  color: #4a6274;
   background-color: #f3a7a7;
 }
 
-.h2-color {
+.h2-custom {
   color: #4a6274;
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 50px;
+}
+
+.custom-link {
+  color: #f59393;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
 }
