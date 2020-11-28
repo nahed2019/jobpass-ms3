@@ -93,6 +93,26 @@ def add_profile(username):
     return redirect(url_for("login"))
 
 
+@app.route("/basic_info", methods=["GET", "POST"])
+def basic_info():
+    if request.method == "POST":
+        basic = {
+            "first_name": request.form.get("first_name"),
+            "last_name": request.form.get("last_name"),
+            "phone": request.form.get("phone"),
+            "email": request.form.get("email"),
+            "cur_title": request.form.get("cur_title"),
+            "education": request.form.get("education"),
+            "adress": request.form.get("adress"),
+            "about_me": request.form.get("about_me"),
+            "created_by": session["user"]
+        }
+        mongo.db.basic_info.insert_one(basic)
+        flash(
+            "Basic Information Successfully Added, Add Your Projects Info")
+
+    return render_template("add_profile.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

@@ -7,15 +7,14 @@
   </header>
 
   <!-- profile information-->
-  <div class="row ">
-    <div class="col-md-4 ">
+  <div class="row">
+    <div class="col-md-4">
       <!-- Tabs profile information -->
       <div
-        class="nav flex-column nav-pills nav-pills-custom "
+        class="nav flex-column nav-pills nav-pills-custom"
         id="v-pills-tab"
         role="tablist"
-        aria-orientation="vertical"
-      >
+        aria-orientation="vertical">
         <a
           class="nav-link mb-3 p-3 shadow active"
           id="v-pills-basics-tab"
@@ -97,10 +96,193 @@
           role="tabpanel"
           aria-labelledby="v-pills-basics-tab"
         >
-          <h4 class="font-italic mb-4">Personal information</h4>
+          <h4 class="font-italic mb-4">Basic information</h4>
           <p class="font-italic text-muted mb-2">
             Please fill up the form below with your information
           </p>
+          <div class="row">
+            <form method="POST" action="{{url_for('basic_info')}}">
+              <div class="form-group">
+                <div class="row">
+                  <!--first name -->
+                  <div class="col-md-6 pt-2">
+                    <label class="sr-only" for="first_name">First Name</label>
+                    <div class="input-group mb-4">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text icon-color">
+                          <i class="fas fa-user-circle"></i>
+                        </div>
+                      </div>
+                      <input
+                        class="form-control form-control-lg validate"
+                        placeholder="First Name"
+                        id="first_name"
+                        name="first_name"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <!--last name -->
+                  <div class="col-md-6 pt-2">
+                    <label class="sr-only" for="last_name">Last Name</label>
+                    <div class="input-group mb-4">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text icon-color">
+                          <i class="fas fa-user-circle"></i>
+                        </div>
+                      </div>
+                      <input
+                        class="form-control form-control-lg validate"
+                        placeholder="last Name"
+                        id="last_name"
+                        name="last_name"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <!-- phone -->
+                  <div class="col-md-6 pt-2">
+                    <label class="sr-only" for="phone">Phone</label>
+                    <div class="input-group mb-4">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text icon-color">
+                          <i class="fas fa-phone"></i>
+                        </div>
+                      </div>
+                      <input
+                        class="form-control form-control-lg validate"
+                        placeholder="Phone"
+                        id="phone"
+                        name="phone"
+                        type="number"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <!--email -->
+                  <div class="col-md-6 pt-2">
+                    <label class="sr-only" for="email">Email</label>
+                    <div class="input-group mb-4">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text icon-color">
+                          <i class="fas fa-envelope"></i>
+                        </div>
+                      </div>
+                      <input
+                        class="form-control form-control-lg validate"
+                        placeholder="Email"
+                        id="email"
+                        name="email"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <!-- cur_title -->
+                  <div class="col-md-6 pt-2">
+                    <label class="sr-only" for="cur_title">Curent Job</label>
+                    <div class="input-group mb-4">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text icon-color">
+                          <i class="fab fa-black-tie"></i>
+                        </div>
+                      </div>
+                      <input
+                        class="form-control form-control-lg validate"
+                        placeholder="Curent Job"
+                        id="cur_title"
+                        name="cur_title"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <!--Education -->
+                  <div class="col-md-6 pt-2">
+                    <label class="sr-only" for="education"
+                      >Education</label
+                    >
+                    <div class="input-group mb-4">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text icon-color">
+                          <i class="fas fa-graduation-cap"></i>
+                        </div>
+                      </div>
+                      <input
+                        class="form-control form-control-lg validate"
+                        placeholder="Education"
+                        id="education"
+                        name="education"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Adress -->
+                <div class="row">
+                  <div class="col-12 pt-2">
+                    <label class="sr-only" for="adress">Adress</label>
+                    <div class="input-group mb-4">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text icon-color">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                      </div>
+                      <input
+                        class="form-control form-control-lg validate"
+                        placeholder="Adress"
+                        id="adress"
+                        name="adress"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- About Me -->
+                <div class="row">
+                  <div class="col-12 pt-2">
+                    <label class="sr-only" for="about_me">About Me</label>
+                    <div class="input-group mb-4">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text icon-color">
+                          <i class="fas fa-align-left"></i>
+                        </div>
+                      </div>
+                      <textarea
+                        class="form-control form-control-lg validate"
+                        placeholder="About Me"
+                        id="about_me"
+                        name="about_me"
+                        minlength="5"
+                        maxlength="200"
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <!-- submit button -->
+                <div class="row">
+                  <div class="col-12">
+                    <button type="submit" class="btn-large btn-block">
+                      Add Your Basic Information
+                      <i class="fas fa-plus-square right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
 
         <div
