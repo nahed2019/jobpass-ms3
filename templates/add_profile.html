@@ -1,10 +1,157 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="container py-5">
+<div class="container py-5 align-items-center">
   <!-- profile header-->
-  <header class="text-center">
+  <header class="text-center mb-5 pb-5">
     <h1 class="display-4">Add Your Profile</h1>
   </header>
+
+  <!-- profile information-->
+  <div class="row ">
+    <div class="col-md-4 ">
+      <!-- Tabs profile information -->
+      <div
+        class="nav flex-column nav-pills nav-pills-custom "
+        id="v-pills-tab"
+        role="tablist"
+        aria-orientation="vertical"
+      >
+        <a
+          class="nav-link mb-3 p-3 shadow active"
+          id="v-pills-basics-tab"
+          data-toggle="pill"
+          href="#v-pills-basics"
+          role="tab"
+          aria-controls="v-pills-basics"
+          aria-selected="true"
+        >
+          <span class="font-weight-bold small text-uppercase"
+            >Add Your Basic Information</span
+          ></a
+        >
+
+        <a
+          class="nav-link mb-3 p-3 shadow"
+          id="v-pills-projects-tab"
+          data-toggle="pill"
+          href="#v-pills-projects"
+          role="tab"
+          aria-controls="v-pills-projects"
+          aria-selected="false"
+        >
+          <span class="font-weight-bold small text-uppercase"
+            >Add Your Projects Information</span
+          ></a
+        >
+
+        <a
+          class="nav-link mb-3 p-3 shadow"
+          id="v-pills-Works-tab"
+          data-toggle="pill"
+          href="#v-pills-Works"
+          role="tab"
+          aria-controls="v-pills-Works"
+          aria-selected="false"
+        >
+          <span class="font-weight-bold small text-uppercase"
+            >Add Your Work Experience</span
+          ></a
+        >
+
+        <a
+          class="nav-link mb-3 p-3 shadow"
+          id="v-pills-skills-tab"
+          data-toggle="pill"
+          href="#v-pills-skills"
+          role="tab"
+          aria-controls="v-pills-skills"
+          aria-selected="false"
+        >
+          <span class="font-weight-bold small text-uppercase"
+            >Add Your Skills Information</span
+          ></a
+        >
+
+        <a
+          class="nav-link mb-3 p-3 shadow"
+          id="v-pills-languages-tab"
+          data-toggle="pill"
+          href="#v-pills-languages"
+          role="tab"
+          aria-controls="v-pills-languages"
+          aria-selected="false"
+        >
+          <span class="font-weight-bold small text-uppercase"
+            >Add Your Languages Information</span
+          ></a
+        >
+      </div>
+    </div>
+
+    <div class="col-md-8 align-items-center">
+      <!-- Tabs content -->
+      <div class="tab-content" id="v-pills-tabContent">
+        <div
+          class="tab-pane fade shadow rounded bg-white show active p-5"
+          id="v-pills-basics"
+          role="tabpanel"
+          aria-labelledby="v-pills-basics-tab"
+        >
+          <h4 class="font-italic mb-4">Personal information</h4>
+          <p class="font-italic text-muted mb-2">
+            Please fill up the form below with your information
+          </p>
+        </div>
+
+        <div
+          class="tab-pane fade shadow rounded bg-white p-5"
+          id="v-pills-projects"
+          role="tabpanel"
+          aria-labelledby="v-pills-projects-tab"
+        >
+          <h4 class="font-italic mb-4">projects information</h4>
+          <p class="font-italic text-muted mb-2">
+            Please fill up the form below with your project information.
+          </p>
+        </div>
+
+        <div
+          class="tab-pane fade shadow rounded bg-white p-5"
+          id="v-pills-Works"
+          role="tabpanel"
+          aria-labelledby="v-pills-Works-tab"
+        >
+          <h4 class="font-italic mb-4">Work Experience</h4>
+          <p class="font-italic text-muted mb-2">
+            Please add your Work Experience here.
+          </p>
+        </div>
+
+        <div
+          class="tab-pane fade shadow rounded bg-white p-5"
+          id="v-pills-skills"
+          role="tabpanel"
+          aria-labelledby="v-pills-skills-tab"
+        >
+          <h4 class="font-italic mb-4">Skills information</h4>
+          <p class="font-italic text-muted mb-2">
+            Please add your Skills here.
+          </p>
+        </div>
+        <div
+          class="tab-pane fade shadow rounded bg-white p-5"
+          id="v-pills-languages"
+          role="tabpanel"
+          aria-labelledby="v-pills-languages-tab"
+        >
+          <h4 class="font-italic mb-4">Languages information</h4>
+          <p class="font-italic text-muted mb-2">
+            Please add your Languages here.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}
