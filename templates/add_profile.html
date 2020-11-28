@@ -88,8 +88,8 @@
     </div>
 
     <div class="col-md-8 align-items-center">
-      <!-- Tabs content -->
       <div class="tab-content" id="v-pills-tabContent">
+        <!-- Tabs content/ Basic information -->
         <div
           class="tab-pane fade shadow rounded bg-white show active p-5"
           id="v-pills-basics"
@@ -102,31 +102,26 @@
           </p>
           <div class="row">
             <form method="POST" action="{{url_for('basic_info')}}">
-              <div class="form-group">
                 <div class="row">
-                  <!--first name -->
-                  <div class="col-md-6 pt-2">
-                    <label class="sr-only" for="first_name">First Name</label>
-                    <div class="input-group mb-4">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text icon-color">
-                          <i class="fas fa-user-circle"></i>
+                    <!--first name -->
+                    <div class="input-group col-md-6 mb-4">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text icon-color">
+                            <i class="fas fa-user-circle"></i>
+                            </div>
                         </div>
-                      </div>
-                      <input
-                        class="form-control form-control-lg validate"
-                        placeholder="First Name"
-                        id="first_name"
-                        name="first_name"
-                        type="text"
-                        required
-                      />
+                        <input
+                            class="form-control form-control-lg validate"
+                            placeholder="First Name"
+                            id="first_name"
+                            name="first_name"
+                            type="text"
+                            required
+                        />
+                        
                     </div>
-                  </div>
                   <!--last name -->
-                  <div class="col-md-6 pt-2">
-                    <label class="sr-only" for="last_name">Last Name</label>
-                    <div class="input-group mb-4">
+                    <div class="input-group col-md-6 mb-4">
                       <div class="input-group-prepend">
                         <div class="input-group-text icon-color">
                           <i class="fas fa-user-circle"></i>
@@ -140,15 +135,12 @@
                         type="text"
                         required
                       />
-                    </div>
-                  </div>
+                    </div> 
                 </div>
 
                 <div class="row">
                   <!-- phone -->
-                  <div class="col-md-6 pt-2">
-                    <label class="sr-only" for="phone">Phone</label>
-                    <div class="input-group mb-4">
+                    <div class="input-group col-md-6 mb-4">
                       <div class="input-group-prepend">
                         <div class="input-group-text icon-color">
                           <i class="fas fa-phone"></i>
@@ -163,11 +155,9 @@
                         required
                       />
                     </div>
-                  </div>
+                  
                   <!--email -->
-                  <div class="col-md-6 pt-2">
-                    <label class="sr-only" for="email">Email</label>
-                    <div class="input-group mb-4">
+                    <div class="input-group col-md-6 mb-4">
                       <div class="input-group-prepend">
                         <div class="input-group-text icon-color">
                           <i class="fas fa-envelope"></i>
@@ -181,15 +171,12 @@
                         type="text"
                         required
                       />
-                    </div>
-                  </div>
+                    </div> 
                 </div>
 
                 <div class="row">
                   <!-- cur_title -->
-                  <div class="col-md-6 pt-2">
-                    <label class="sr-only" for="cur_title">Curent Job</label>
-                    <div class="input-group mb-4">
+                    <div class="input-group col-md-6 mb-4">
                       <div class="input-group-prepend">
                         <div class="input-group-text icon-color">
                           <i class="fab fa-black-tie"></i>
@@ -204,13 +191,9 @@
                         required
                       />
                     </div>
-                  </div>
+                  
                   <!--Education -->
-                  <div class="col-md-6 pt-2">
-                    <label class="sr-only" for="education"
-                      >Education</label
-                    >
-                    <div class="input-group mb-4">
+                    <div class="input-group col-md-6 mb-4">
                       <div class="input-group-prepend">
                         <div class="input-group-text icon-color">
                           <i class="fas fa-graduation-cap"></i>
@@ -225,14 +208,12 @@
                         required
                       />
                     </div>
-                  </div>
+                  
                 </div>
 
                 <!-- Adress -->
                 <div class="row">
-                  <div class="col-12 pt-2">
-                    <label class="sr-only" for="adress">Adress</label>
-                    <div class="input-group mb-4">
+                    <div class="input-group col-12 mb-4">
                       <div class="input-group-prepend">
                         <div class="input-group-text icon-color">
                           <i class="fas fa-map-marker-alt"></i>
@@ -247,13 +228,10 @@
                         required
                       />
                     </div>
-                  </div>
                 </div>
                 <!-- About Me -->
                 <div class="row">
-                  <div class="col-12 pt-2">
-                    <label class="sr-only" for="about_me">About Me</label>
-                    <div class="input-group mb-4">
+                    <div class="input-group col-12 mb-4">
                       <div class="input-group-prepend">
                         <div class="input-group-text icon-color">
                           <i class="fas fa-align-left"></i>
@@ -269,7 +247,7 @@
                         required
                       ></textarea>
                     </div>
-                  </div>
+                  
                 </div>
                 <!-- submit button -->
                 <div class="row">
@@ -279,24 +257,95 @@
                       <i class="fas fa-plus-square right"></i>
                     </button>
                   </div>
-                </div>
-              </div>
+                </div> 
             </form>
           </div>
         </div>
-
+        <!-- Tabs content/ projects information -->
         <div
           class="tab-pane fade shadow rounded bg-white p-5"
           id="v-pills-projects"
           role="tabpanel"
           aria-labelledby="v-pills-projects-tab"
         >
-          <h4 class="font-italic mb-4">projects information</h4>
+          <h4 class="font-italic mb-4">Projects Information</h4>
           <p class="font-italic text-muted mb-2">
-            Please fill up the form below with your project information.
+            Please fill up the form below with the information of your projects.
           </p>
-        </div>
+          <div class="row">
+            <form method="POST" action="{{url_for('add_project')}}" style="width:100%">
+                <div class="row">
+                  <!--project name -->
+                    <div class="input-group col-12 mb-4">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text icon-color">
+                          <i class="fas fa-project-diagram"></i>
+                        </div>
+                      </div>
+                      <input
+                        class="form-control form-control-lg validate"
+                        placeholder="Project Name"
+                        id="project_name"
+                        name="project_name"
+                        type="text"
+                        required
+                      />
+                    </div>
+                </div>
+                
+                <!-- Project Image -->
+                <div class="row">
+                    <div class="input-group col-12 mb-4">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text icon-color">
+                          <i class="fas fa-image"></i>
+                        </div>
+                      </div>
+                      <input
+                        class="form-control form-control-lg validate"
+                        placeholder="Project Image"
+                        id="project_image"
+                        name="project_image"
+                        type="text"
+                        required
+                      />
+                    </div>
+                </div>
 
+                <!-- Project Description -->
+                <div class="row">
+                    <div class="input-group col-12 mb-4">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text icon-color">
+                          <i class="fas fa-align-left"></i>
+                        </div>
+                      </div>
+                      <textarea
+                        class="form-control form-control-lg validate"
+                        placeholder="Project Description"
+                        id="project_desc"
+                        name="project_desc"
+                        minlength="5"
+                        maxlength="200"
+                        required
+                      ></textarea>
+                    </div>
+                </div>
+
+                <!-- submit button -->
+                <div class="row">
+                  <div class="col-12">
+                    <button type="submit" class="btn-large btn-block">
+                      Add Your Project Information
+                      <i class="fas fa-plus-square right"></i>
+                    </button>
+                  </div>
+                </div>
+              
+            </form>
+          </div>
+        </div>
+        <!-- Tabs content/ experience information -->
         <div
           class="tab-pane fade shadow rounded bg-white p-5"
           id="v-pills-Works"
@@ -308,7 +357,7 @@
             Please add your Work Experience here.
           </p>
         </div>
-
+        <!-- Tabs content/ skills information -->
         <div
           class="tab-pane fade shadow rounded bg-white p-5"
           id="v-pills-skills"
@@ -320,6 +369,7 @@
             Please add your Skills here.
           </p>
         </div>
+        <!-- Tabs content/ languages information -->
         <div
           class="tab-pane fade shadow rounded bg-white p-5"
           id="v-pills-languages"

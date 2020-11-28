@@ -114,6 +114,22 @@ def basic_info():
     return render_template("add_profile.html")
 
 
+@app.route("/add_project", methods=["GET", "POST"])
+def add_project():
+    if request.method == "POST":
+        project = {
+            "project_name": request.form.get("project_name"),
+            "project_desc": request.form.get("project_desc"),
+            "project_image": request.form.get("project_image"),
+            "created_by": session["user"]
+        }
+        mongo.db.projects.insert_one(project)
+        flash(
+            "Projects Information Successfully Added, Add more Projects Info or move to Experience section ")
+
+    return render_template("add_profile.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
