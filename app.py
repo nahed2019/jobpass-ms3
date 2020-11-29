@@ -184,6 +184,23 @@ def languages():
     return render_template("add_profile.html")
 
 
+@app.route("/manage_profile/<username>", methods=["GET", "POST"])
+def manage_profile(username):
+    if session["user"]:
+        # grab the session user's username from db
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        basic_info = mongo.db.basic_info.find()
+        projects = mongo.db.projects.find()
+        skills = mongo.db.skills.find()
+        works = mongo.db.work_experience.find()
+        return render_template(
+            "manage_profile.html", username=username,
+            basic_info=basic_info, projects=projects,
+            skills=skills, works=works)
+    return redirect(url_for("login"))
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookie
