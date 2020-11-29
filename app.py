@@ -125,7 +125,7 @@ def add_project():
         }
         mongo.db.projects.insert_one(project)
         flash(
-            "Projects Information Successfully Added,Add more Projects Info or move to Experience section")
+            "Projects Info Successfully Added,Move to Experience section")
 
     return render_template("add_profile.html")
 
@@ -176,6 +176,13 @@ def languages():
 
     return render_template("add_profile.html")
 
+
+@app.route("/logout")
+def logout():
+    # remove user from session cookie
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
