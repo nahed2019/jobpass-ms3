@@ -162,6 +162,21 @@ def skills():
     return render_template("add_profile.html")
 
 
+@app.route("/languages", methods=["GET", "POST"])
+def languages():
+    if request.method == "POST":
+        languages = {
+            "language_name": request.form.get("language_name"),
+            "language_level": request.form.get("language_level"),
+            "created_by": session["user"]
+        }
+        mongo.db.languages.insert_one(languages)
+        flash(
+            "Languages Information Successfully Added, Add more languages")
+
+    return render_template("add_profile.html")
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

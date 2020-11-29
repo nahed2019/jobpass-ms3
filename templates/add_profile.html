@@ -403,7 +403,7 @@
 
               <!-- from/to date -->
               <div class="row">
-                <div class="input-group  col-6 mb-4 datepicker date" >
+                <div class="input-group col-6 mb-4 datepicker date">
                   <div class="input-group-prepend">
                     <div class="input-group-text icon-color">
                       <i class="fas fa-calendar"></i>
@@ -412,13 +412,13 @@
                   <input
                     type="date"
                     placeholder="Choose a start date"
-                    class="form-control form-control-lg validate "
+                    class="form-control form-control-lg validate"
                     id="from_date"
                     name="from_date"
                     required
                   />
                 </div>
-                <div class="input-group  col-6 mb-4 datepicker date" >
+                <div class="input-group col-6 mb-4 datepicker date">
                   <div class="input-group-prepend">
                     <div class="input-group-text icon-color">
                       <i class="fas fa-calendar"></i>
@@ -427,7 +427,7 @@
                   <input
                     type="date"
                     placeholder="Choose end date"
-                    class="form-control form-control-lg validate "
+                    class="form-control form-control-lg validate"
                     id="to_date"
                     name="to_date"
                     required
@@ -513,8 +513,8 @@
               </div>
             </form>
           </div>
-          
         </div>
+
         <!-- Tabs content/ languages information -->
         <div
           class="tab-pane fade shadow rounded bg-white p-5"
@@ -526,6 +526,61 @@
           <p class="font-italic text-muted mb-2">
             Please add your Languages here.
           </p>
+          <div class="row">
+            <form
+              method="POST"
+              action="{{url_for('languages')}}"
+              style="width: 100%"
+            >
+              <div class="row">
+                <!--language name -->
+                <div class="input-group col-12 mb-4">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text icon-color">
+                      <i class="fas fa-language"></i>
+                    </div>
+                  </div>
+                  <input
+                    class="form-control form-control-lg validate"
+                    placeholder="Language Name"
+                    id="language_name"
+                    name="language_name"
+                    type="text"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- percent -->
+              <div class="row">
+                <div class="input-group col-12 mb-4">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text icon-color">
+                      <i class="fas fa-percent"></i>
+                    </div>
+                  </div>
+                  <select class="custom-select custom-select-lg validate" id="language_level" name="language_level" required >
+                    <option selected value="" disabled="disabled">Select Level</option>
+                    <option value="Mother Tongue">Mother Tongue</option>
+                    <option value="B1">B1</option>
+                    <option value="B2">B2</option>
+                    <option value="C1">C1</option>
+                    <option value="D1">D1</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- submit button -->
+              <div class="row">
+                <div class="col-12">
+                  <button type="submit" class="btn-large btn-block">
+                    Add Your Skill Information
+                    <i class="fas fa-plus-square right"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
