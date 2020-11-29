@@ -458,6 +458,62 @@
           <p class="font-italic text-muted mb-2">
             Please add your Skills here.
           </p>
+          <div class="row">
+            <form
+              method="POST"
+              action="{{url_for('skills')}}"
+              style="width: 100%"
+            >
+              <div class="row">
+                <!--skill name -->
+                <div class="input-group col-12 mb-4">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text icon-color">
+                      <i class="fas fa-bolt"></i>
+                    </div>
+                  </div>
+                  <input
+                    class="form-control form-control-lg validate"
+                    placeholder="Skill Name"
+                    id="skill_name"
+                    name="skill_name"
+                    type="text"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- percent -->
+              <div class="row">
+                <div class="input-group col-12 mb-4">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text icon-color">
+                      <i class="fas fa-percent"></i>
+                    </div>
+                  </div>
+                  <input
+                    class="form-control form-control-lg validate"
+                    placeholder="Skill percent"
+                    id="percent"
+                    name="percent"
+                    type="number"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- submit button -->
+              <div class="row">
+                <div class="col-12">
+                  <button type="submit" class="btn-large btn-block">
+                    Add Your Skill Information
+                    <i class="fas fa-plus-square right"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          
         </div>
         <!-- Tabs content/ languages information -->
         <div

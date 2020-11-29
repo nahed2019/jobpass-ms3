@@ -147,6 +147,22 @@ def work_experience():
     return render_template("add_profile.html")
 
 
+@app.route("/skills", methods=["GET", "POST"])
+def skills():
+    if request.method == "POST":
+        skills = {
+            "skill_name": request.form.get("skill_name"),
+            "percent": request.form.get("percent"),
+            "created_by": session["user"]
+        }
+        mongo.db.skills.insert_one(skills)
+        flash(
+            "skills Information Successfully Added, Add more skills")
+
+    return render_template("add_profile.html")
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
