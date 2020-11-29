@@ -125,7 +125,24 @@ def add_project():
         }
         mongo.db.projects.insert_one(project)
         flash(
-            "Projects Information Successfully Added, Add more Projects Info or move to Experience section ")
+            "Projects Information Successfully Added,Add more Projects Info or move to Experience section")
+
+    return render_template("add_profile.html")
+
+
+@app.route("/work_experience", methods=["GET", "POST"])
+def work_experience():
+    if request.method == "POST":
+        work_experience = {
+            "job_title": request.form.get("job_title"),
+            "company_name": request.form.get("company_name"),
+            "from_date": request.form.get("from_date"),
+            "to_date": request.form.get("to_date"),
+            "created_by": session["user"]
+        }
+        mongo.db.work_experience.insert_one(work_experience)
+        flash(
+            "Experience Information Successfully Added, Add more Experience")
 
     return render_template("add_profile.html")
 
