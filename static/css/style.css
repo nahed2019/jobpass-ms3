@@ -15,7 +15,7 @@
 }
 
 .body-custom{
-    min-height: 100vh;
+
     background: linear-gradient(to left, #4a6274, #d9e5ee);
 }
 
@@ -98,7 +98,7 @@
         content: '';
         display: block;
         border-top: 8px solid transparent;
-        border-left: 10px solid #f3a7a7;
+        border-left: 10px solid #fff;
         border-bottom: 8px solid transparent;
         position: absolute;
         top: 50%;
@@ -112,7 +112,40 @@
     opacity: 1;
 }
 
+/* ------------------------------------------------Profile shop */
 
 
+.card-shop{
+    margin:10px;
+    padding: 5px;
+}
 
+.card-bg{
+    background-color: #f3a7a7;
+}
 
+/* credit: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
+and edited slightly to fit project needs */
+#to-top-btn {
+  position: fixed;
+  bottom: 15px;
+  right: 5px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #ed6a5a;
+  opacity: 0;
+  background-color: transparent;
+  -webkit-transition: all 0.5s ease-in-out 0.2s;
+  transition: all 0.5s ease-in-out 0.2s;
+}
+
+#to-top-btn.active {
+  pointer-events: auto;
+  opacity: 0.5;
+}
+
+#to-top-btn.active:hover {
+  opacity: 1;
+}
