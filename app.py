@@ -31,6 +31,13 @@ def profile():
         projects=projects, skills=skills, works=works)
 
 
+@app.route("/shop")
+def shop():
+    basics = mongo.db.basic_info.find()
+    return render_template(
+        "shop.html", basics=basics)
+
+
 # Route for register
 @app.route("/register", methods=["GET", "POST"])
 def register():

@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
+  {% for basic in basics %}
+    <div class="card">
+        <div class="card-body">
+        <h5 class="card-title">{{ basic.first_name }}{{ basic.last_name }}</h5>
+        <p class="card-text">
+            Curent Work : {{ basic.cur_title }}<br>
+            Phone : {{ basic.phone }}<br>
+            Email:{{ basic.email }}<br>
+            Education:{{ basic.education }}<br>
+            Adress:{{ basic.adress }}
+        </p>
+        <p class="card-text">
+            <small class="text-muted">You can find full profile here</small>
+        </p>
+        </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
