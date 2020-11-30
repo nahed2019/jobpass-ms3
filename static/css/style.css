@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
 * {
   margin: 0;
@@ -14,17 +14,14 @@
   font-weight: 400;
 }
 
-.body-custom{
-
-    background: linear-gradient(to left, #4a6274, #d9e5ee);
+.body-custom {
+  background: linear-gradient(to left, #4a6274, #d9e5ee);
 }
-
 
 /* ------------------------------------------------NAVBAR */
 
 .nav-bg {
   background-color: #4a6274;
-  
 }
 
 .navbar-brand {
@@ -42,7 +39,6 @@
 }
 
 /* ------------------------------------------------Register/login */
-
 
 .icon-color {
   color: #f3a7a7;
@@ -80,52 +76,137 @@
 
 /* ------------------------------------------------Add Profile */
 
+/* credit: code for vertical Tabs taken from https://bootstrapious.com/p/bootstrap-vertical-tabs
+and edited slightly to fit project needs */
+
 .nav-pills-custom .nav-link {
-    color: #000;
-    background: #4a6274;
-    position: relative;
+  color: #000;
+  background: #4a6274;
+  position: relative;
 }
 
 .nav-pills-custom .nav-link.active {
-    color: #4a6274;
-    background: #f3a7a7;
+  color: #4a6274;
+  background: #f3a7a7;
 }
-
 
 /* Add indicator arrow for the active tab */
 @media (min-width: 892px) {
-    .nav-pills-custom .nav-link::before {
-        content: '';
-        display: block;
-        border-top: 8px solid transparent;
-        border-left: 10px solid #fff;
-        border-bottom: 8px solid transparent;
-        position: absolute;
-        top: 50%;
-        right: -10px;
-        transform: translateY(-50%);
-        opacity: 0;
-    }
+  .nav-pills-custom .nav-link::before {
+    content: "";
+    display: block;
+    border-top: 8px solid transparent;
+    border-left: 10px solid #fff;
+    border-bottom: 8px solid transparent;
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    opacity: 0;
+  }
 }
 
 .nav-pills-custom .nav-link.active::before {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* ------------------------------------------------Profile shop */
 
-
-.card-shop{
-    margin:10px;
-    padding: 5px;
+.card-shop {
+  margin: 10px;
+  padding: 5px;
 }
 
-.card-bg{
-    background-color: #f3a7a7;
+.card-bg {
+  background-color: #f3a7a7;
+}
+
+/* ----------------------------------------------intro section/Manage Profile */
+
+.intro {
+  min-height: 85vh;
+  background-image: url(https://images.unsplash.com/photo-1489844097929-c8d5b91c456e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* ----------------------------------------------Work history/Manage Profile */
+.history-heading {
+  color: #000000;
+  margin-bottom: 50px;
+}
+
+.timeline-item {
+  padding: 4em 2em 0em 2em;
+  position: relative;
+  color: #000000;
+  border-left: 1px solid;
+}
+
+.timeline-item p {
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-item:before {
+  content: attr(data-dates);
+  position: absolute;
+  left: 2.5em;
+  top: 3em;
+  display: block;
+  font-family: "Exo", sans-serif;
+  font-weight: 500;
+  font-size: 0.8em;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-item:after {
+  width: 12px;
+  height: 12px;
+  display: block;
+  top: 2.4em;
+  position: absolute;
+  left: -6px;
+  border-radius: 12px;
+  content: "";
+  background: #000000;
+}
+
+.history-items {
+  margin-bottom: 30px;
+}
+
+/* ----------------------------------------Skills/Manage profile */
+
+.progress {
+  position: relative;
+  height: 25px;
+  margin-bottom: 4px;
+  line-height: 2;
+}
+
+.progress-bg {
+  background-color: #f3a7a7;
+}
+
+.progress-type {
+  position: absolute;
+  left: 0px;
+  font-weight: 400;
+  padding: 3px 30px 2px 10px;
+  color: #fafafa;
+  background-color: rgba(25, 25, 25, 0.2);
+}
+
+.progress-section {
+  margin: 40px 20px;
 }
 
 /* credit: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
 and edited slightly to fit project needs */
+
 #to-top-btn {
   position: fixed;
   bottom: 15px;
@@ -134,7 +215,7 @@ and edited slightly to fit project needs */
   border: none;
   outline: none;
   cursor: pointer;
-  color: #ed6a5a;
+  color: #f3a7a7;
   opacity: 0;
   background-color: transparent;
   -webkit-transition: all 0.5s ease-in-out 0.2s;

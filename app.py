@@ -77,6 +77,8 @@ def login():
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(
+                    url_for("manage_profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -127,7 +129,7 @@ def add_project():
         project = {
             "project_name": request.form.get("project_name"),
             "project_desc": request.form.get("project_desc"),
-            "project_image": request.form.get("project_image"),
+            "project_link": request.form.get("project_link"),
             "created_by": session["user"]
         }
         mongo.db.projects.insert_one(project)
@@ -190,14 +192,15 @@ def manage_profile(username):
         # grab the session user's username from db
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
-        basic_info = mongo.db.basic_info.find()
+        basic_info = list(mongo.db.basic_info.find())
         projects = mongo.db.projects.find()
         skills = mongo.db.skills.find()
         works = mongo.db.work_experience.find()
+        languages = mongo.db.languages.find()
         return render_template(
             "manage_profile.html", username=username,
             basic_info=basic_info, projects=projects,
-            skills=skills, works=works)
+            skills=skills, works=works, languages=languages)
     return redirect(url_for("login"))
 
 

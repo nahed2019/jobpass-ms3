@@ -1,11 +1,172 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
-    {% for project in projects %}
-        {{ project.project_name }}<br>
-        {{ project.project_image }}<br>
-        {{ project.project_desc }}<br>
-        
-    {% endfor %}
+<section class="intro">
+  <div
+    class="container h-100 d-flex justify-content-center align-items-center py-3"
+  >
+    <div class="row">
+      <div class="col-md-12 pt-3">
+        {% for info in basic_info %} {% if session.user|lower ==
+        info.created_by|lower %}
+        <div class="text-center pt-5">
+          <h1 class="mt-4 uppercase">
+            <strong> {{ info.first_name }} {{ info.last_name }}</strong>
+          </h1>
+          <h2 class="mt-4 uppercase">
+            <strong>{{ info.cur_title }}</strong>
+          </h2>
+        </div>
+        {% endif%} {% endfor %}
+        <div class="text-center pt-5">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="#about">About </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#projects">Projects & Skills</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#works">Work Experience </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container py-3 justify-content-center align-items-center">
+    <h2 class="uppercase text-center py-5">About Me</h2>
+    <div class="row">
+      <!-- first column -->
+      <div class="col-md-4 mb-5">
+        <!--Panel-->
+        <div class="card h-100 card-body">
+          <span class="text-center"
+            ><i class="fas fa-language mb-3 fa-4x"></i
+          ></span>
+          {% for language in languages %} {% if session.user|lower
+          ==language.created_by|lower %}
+          <ul class="list-unstyled">
+            <li>
+              <p>Language : {{ language.language_name }}</p>
+            </li>
+            <li>
+              <p>Level :{{ language.language_level }}</p>
+            </li>
+          </ul>
+          {% endif%} {% endfor %} {% for basic in basic_info %} {% if
+          session.user|lower ==basic.created_by|lower %}
+        </div>
+        <!--Panel-->
+      </div>
+
+      <!-- second column -->
+      <div class="col-md-4 mb-5 order-first">
+        <!--Panel-->
+        <div class="card h-100 card-body text-center">
+          <i class="fas fa-laptop fa-4x mb-2" aria-hidden="true"></i>
+          <p class="mt-2">
+            I am {{ basic.first_name }} {{ basic.last_name }}, and I am working
+            as {{ basic.cur_title }} <br />
+            I graduated from {{ basic.education }} <br />
+            {{ basic.about_me }}
+          </p>
+        </div>
+        <!--/.Panel-->
+      </div>
+      <!-- third column -->
+      <div class="col-md-4 mb-5 order-last">
+        <!--Panel-->
+        <div class="card h-100 card-body">
+          <ul class="list-unstyled text-center">
+            <li>
+              <i class="fas fa-map-marker-alt fa-2x"></i>
+              <p>{{ basic.adress }}</p>
+            </li>
+            <li>
+              <i class="fas fa-phone fa-2x"></i>
+              <p>{{ basic.phone }}</p>
+            </li>
+            <li>
+              <i class="fas fa-envelope fa-2x"></i>
+              <p>{{ basic.email }}</p>
+            </li>
+          </ul>
+        </div>
+        <!--Panel-->
+      </div>
+      {% endif%} {% endfor %}
+    </div>
+  </div>
+</section>
+<section id="projects">
+  <div class="container py-4 pt-4">
+    <div class="row">
+      <div class="col-md-6 ">
+        <h2 class="uppercase  py-4">Projects</h2>
+        <p class="pb-2"> Here are a few projects that I've worked on recently. </p>
+        {% for project in projects %} {% if session.user|lower ==
+        project.created_by|lower %}
+        <ul class="list-unstyled">
+          <li>
+            <h3>Project Name : {{ project.project_name }}</h3>
+          </li>
+          <li>
+            <p>Project Description :{{ project.project_desc }}</p>
+          </li>
+          <li>
+            <p>Project Link :{{ project.project_link }}</p>
+          </li>
+        </ul>
+        <hr />
+        {% endif%} {% endfor %}
+      </div>
+      <div class="col-md-6 ">
+        <h2 class="uppercase  py-4">skills list</h2>
+        {% for skill in skills %} {% if
+        session.user|lower==skill.created_by|lower%}
+        <p class="black-text text-uppercase font-weight-bold" align="justify">
+          {{skill.skill_name}}
+        </p>
+        <div class="progress mt-3">
+          <div
+            class="progress-bar progress-bg"
+            role="progressbar"
+            aria-valuenow="{{skill.percent}}"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            style="width: {{skill.percent}}%"
+          ></div>
+          <span class="progress-type">{{ skill.percent }}%</span>
+        </div>
+        <hr />
+        {% endif%} {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<section id="works">
+  <div class="container py-3 ">
+    <div class="row">
+      <div class="col ">
+        <h2 class="uppercase  py-5">Work Experience</h2>
+        {% for work in works %} {% if session.user|lower ==
+        work.created_by|lower %}
+        <div class="history-items">
+          <div
+            class="timeline-item"
+            data-dates="{{ work.from_date }} - {{ work.to_date }}"
+          >
+            <h4>{{ work.company_name }}</h4>
+            <p>{{ work.job_title }}</p>
+          </div>
+        </div>
+        {% endif%} {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endblock %}
