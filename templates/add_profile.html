@@ -1,5 +1,8 @@
 {% extends "base.html" %} {% block content %}
 
+<!--* credit: code for vertical Tabs taken from https://bootstrapious.com/p/bootstrap-vertical-tabs
+and edited to fit project needs *-->
+
 <div class="container py-5 align-items-center">
   <!-- profile header-->
   <header class="text-center mb-2 pb-5">
@@ -559,8 +562,13 @@
                       <i class="fas fa-percent"></i>
                     </div>
                   </div>
-                  <select class="custom-select custom-select-lg validate" id="language_level" name="language_level" required >
-                    <option selected >Select Level</option>
+                  <select
+                    class="custom-select custom-select-lg validate"
+                    id="language_level"
+                    name="language_level"
+                    required
+                  >
+                    <option selected>Select Level</option>
                     <option value="Mother Tongue">Mother Tongue</option>
                     <option value="B1">B1</option>
                     <option value="B2">B2</option>

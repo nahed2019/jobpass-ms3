@@ -17,16 +17,16 @@
           </h2>
         </div>
         {% endif%} {% endfor %}
-        <div class="text-center pt-5">
+        <div class="text-center pt-5 ">
           <ul class="list-inline">
-            <li class="list-inline-item">
-              <a href="#about">About </a>
+            <li class="list-inline-item ">
+              <a href="#about" class="custom-link">About </a>
             </li>
-            <li class="list-inline-item">
-              <a href="#projects">Projects & Skills</a>
+            <li class="list-inline-item ">
+              <a href="#projects" class="custom-link" >Projects & Work Experience</a>
             </li>
-            <li class="list-inline-item">
-              <a href="#works">Work Experience </a>
+            <li class="list-inline-item ">
+              <a href="#skill" class="custom-link">Skills </a>
             </li>
           </ul>
         </div>
@@ -40,11 +40,11 @@
     <h2 class="uppercase text-center py-5">About Me</h2>
     <div class="row">
       <!-- first column -->
-      <div class="col-md-4 mb-5">
+      <div class="col-md-4 mb-2">
         <!--Panel-->
-        <div class="card h-100 card-body">
+        <div class="card h-100 card-body justify-content-center card-about">
           <span class="text-center"
-            ><i class="fas fa-language mb-3 fa-4x"></i
+            ><i class="fas fa-language mb-4 fa-3x icon-about"></i
           ></span>
           {% for language in languages %} {% if session.user|lower
           ==language.created_by|lower %}
@@ -63,35 +63,35 @@
       </div>
 
       <!-- second column -->
-      <div class="col-md-4 mb-5 order-first">
+      <div class="col-md-4 mb-2 order-first">
         <!--Panel-->
-        <div class="card h-100 card-body text-center">
-          <i class="fas fa-laptop fa-4x mb-2" aria-hidden="true"></i>
-          <p class="mt-2">
+        <div class="card h-100 card-body card-about ">
+          <i class="fas fa-laptop fa-4x mb-5 text-center icon-about" aria-hidden="true"></i>
+          <p class="mt-3 justify-content-center">
             I am {{ basic.first_name }} {{ basic.last_name }}, and I am working
             as {{ basic.cur_title }} <br />
             I graduated from {{ basic.education }} <br />
             {{ basic.about_me }}
           </p>
         </div>
-        <!--/.Panel-->
+        <!--Panel-->
       </div>
       <!-- third column -->
-      <div class="col-md-4 mb-5 order-last">
+      <div class="col-md-4 mb-2 order-last">
         <!--Panel-->
-        <div class="card h-100 card-body">
+        <div class="card h-100 card-body justify-content-center card-about">
           <ul class="list-unstyled text-center">
             <li>
-              <i class="fas fa-map-marker-alt fa-2x"></i>
-              <p>{{ basic.adress }}</p>
+              <i class="fas fa-map-marker-alt mb-2 fa-3x icon-about"></i>
+              <p class="mb-3">{{ basic.adress }}</p>
             </li>
             <li>
-              <i class="fas fa-phone fa-2x"></i>
-              <p>{{ basic.phone }}</p>
+              <i class="fas fa-phone mb-2 fa-2x icon-about"></i>
+              <p class="mb-3">{{ basic.phone }}</p>
             </li>
             <li>
-              <i class="fas fa-envelope fa-2x"></i>
-              <p>{{ basic.email }}</p>
+              <i class="fas fa-envelope mb-2 fa-2x icon-about"></i>
+              <p class="mb-3">{{ basic.email }}</p>
             </li>
           </ul>
         </div>
@@ -101,11 +101,12 @@
     </div>
   </div>
 </section>
+<hr class="solid">
 <section id="projects">
-  <div class="container py-4 pt-4">
+  <div class="container py-3 ">
     <div class="row">
       <div class="col-md-6 ">
-        <h2 class="uppercase  py-4">Projects</h2>
+        <h2 class="uppercase  py-3">Projects</h2>
         <p class="pb-2"> Here are a few projects that I've worked on recently. </p>
         {% for project in projects %} {% if session.user|lower ==
         project.created_by|lower %}
@@ -124,10 +125,32 @@
         {% endif%} {% endfor %}
       </div>
       <div class="col-md-6 ">
-        <h2 class="uppercase  py-4">skills list</h2>
+        <h2 class="uppercase  py-3">Work Experience</h2>
+        {% for work in works %} {% if session.user|lower ==
+        work.created_by|lower %}
+        <div class="history-items">
+          <div
+            class="timeline-item"
+            data-dates="{{ work.from_date }} - {{ work.to_date }}"
+          >
+            <h4>{{ work.company_name }}</h4>
+            <p>{{ work.job_title }}</p>
+          </div>
+        </div>
+        {% endif%} {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="solid">
+<section id="skill">
+  <div class="container py-3 justify-content-center align-items-center ">
+    <div class="row">
+      <div class="justify-content-center  col-md-10 offset-md-1 ">
+        <h2 class="uppercase text-center py-3">skills list</h2>
         {% for skill in skills %} {% if
         session.user|lower==skill.created_by|lower%}
-        <p class="black-text text-uppercase font-weight-bold" align="justify">
+        <p class="text-uppercase font-weight-bold" align="justify">
           {{skill.skill_name}}
         </p>
         <div class="progress mt-3">
@@ -142,27 +165,6 @@
           <span class="progress-type">{{ skill.percent }}%</span>
         </div>
         <hr />
-        {% endif%} {% endfor %}
-      </div>
-    </div>
-  </div>
-</section>
-<section id="works">
-  <div class="container py-3 ">
-    <div class="row">
-      <div class="col ">
-        <h2 class="uppercase  py-5">Work Experience</h2>
-        {% for work in works %} {% if session.user|lower ==
-        work.created_by|lower %}
-        <div class="history-items">
-          <div
-            class="timeline-item"
-            data-dates="{{ work.from_date }} - {{ work.to_date }}"
-          >
-            <h4>{{ work.company_name }}</h4>
-            <p>{{ work.job_title }}</p>
-          </div>
-        </div>
         {% endif%} {% endfor %}
       </div>
     </div>
