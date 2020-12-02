@@ -1,6 +1,121 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
-    
+<section class="main-container">
+	<div class="container  justify-content-center align-items-center py-3">
+		<div class="row">
+			<div class="col">
+				<div class="py-5 text-center">
+					<h3 class="uppercase">I am <strong >Nahed Alsayd Ahmad</strong></h3>
+					<h3 class="mt-4 uppercase">I'm almost full-stack web developer</h3>
+				</div>
+				<div class="text-center ">
+					<ul class="list-inline">
+						<li class="list-inline-item ">
+							<a href="#about" class="custom-link">About </a>
+						</li>
+						<li class="list-inline-item ">
+							<a href="#projects" class="custom-link">My Projects</a>
+						</li>
+						<li class="list-inline-item ">
+							<a href="#contact" class="custom-link">Contact Me </a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--* credit: code for vertical Tabs taken from https://bootstrapious.com/p/bootstrap-carousel-with-quotes and edited to fit project needs *-->
+		<section class="pb-5">
+			<div class="container">
+				<div class="row">
+					<div class="col mx-auto">
+						<div class="p-5 bg-white shadow rounded">
+							<!-- Bootstrap carousel-->
+							<div class="carousel slide" id="jobPass" data-ride="carousel">
+								<!-- Bootstrap carousel indicators [nav] -->
+								<ol class="carousel-indicators mb-0">
+									<li class="active" data-target="#jobPass" data-slide-to="0"></li>
+									<li data-target="#jobPass" data-slide-to="1"></li>
+									<li data-target="#jobPass" data-slide-to="2"></li>
+								</ol>
+
+								<!-- Bootstrap inner [slides]-->
+								<div class="carousel-inner px-5 pb-4">
+									<!-- Carousel slide-->
+									<div class="carousel-item active">
+										<div class="media">
+											<div class="media-body ml-3">
+												<blockquote class="blockquote border-0 p-0">
+													<h4 class="uppercase pb-3">
+														<i class="fa fa-question icon-about" aria-hidden="true"></i>
+														What do I do?
+													</h4>
+													<p class="font-italic lead">
+														I'm a skilled Full Stack Developer with a wealth of diverse life
+														and technical experience that I bring to every project.
+													</p>
+												</blockquote>
+											</div>
+										</div>
+									</div>
+
+									<!-- Carousel slide-->
+									<div class="carousel-item">
+										<div class="media">
+											<div class="media-body ml-3">
+												<blockquote class="blockquote border-0 p-0">
+													<h4 class="uppercase pb-3">
+														<i class="icon-about fa fa-thumbs-up" aria-hidden="true"></i>
+														How do I do it?</h4>
+													<p class="font-italic lead">
+														I follow form as well as function. I know that the aesthetics of
+														effective design combined with application speed, security and
+														reliability combine to create a great user experience.
+													</p>
+												</blockquote>
+											</div>
+										</div>
+									</div>
+
+									<!-- Carousel slide-->
+									<div class="carousel-item">
+										<div class="media">
+											<div class="media-body ml-3">
+												<blockquote class="blockquote border-0 p-0">
+													<h4 class="uppercase pb-3">
+														<i class="icon-about fa fa-bolt" aria-hidden="true"></i> Why
+														hire me?</h4>
+													<p class="font-italic lead">
+														I work quickly and effectively in getting things built and
+														working across the stack. I'm an excellent communicator who
+														thrives in bright and enthusiastic teams and I'm also a self
+														starter when working solo.
+													</p>
+
+												</blockquote>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Bootstrap controls [dots]-->
+								<a class="carousel-control-prev width-auto" href="#jobPass" role="button"
+									data-slide="prev">
+									<i class="fa fa-angle-left text-dark text-lg"></i>
+									<span class="sr-only">Previous</span>
+								</a>
+								<a class="carousel-control-next width-auto" href="#jobPass" role="button"
+									data-slide="next">
+									<i class="fa fa-angle-right text-dark text-lg"></i>
+									<span class="sr-only">Next</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</div>
+</section>
 
 {% endblock %}

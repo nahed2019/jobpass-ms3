@@ -20,6 +20,10 @@
   background: linear-gradient(to left, #4a6274, #d9e5ee);
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
 /* ------------------------------------------------NAVBAR */
 
 .nav-bg {
@@ -217,6 +221,35 @@ hr.solid {
 
 .progress-section {
   margin: 40px 20px;
+}
+
+/* -------------------------------------------------------------/My profile */
+
+/* -------------------------------------main-container*/
+
+.main-container {
+  min-height: 85vh;
+  background-image: url(https://miro.medium.com/max/3840/1*ee9Ji2ToUxeYfj3YUQ1xsA.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.width-auto {
+    width: auto;
+}
+
+.text-lg {
+    font-size: 2rem;
+}
+
+.carousel-indicators li {
+    border: none;
+    background: #ccc;
+}
+
+.carousel-indicators li.active {
+    background: #4a6274;
 }
 
 /* credit: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
