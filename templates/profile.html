@@ -1,121 +1,283 @@
 {% extends "base.html" %} {% block content %}
 
 <section class="main-container">
-	<div class="container  justify-content-center align-items-center py-3">
-		<div class="row">
-			<div class="col">
-				<div class="py-5 text-center">
-					<h3 class="uppercase">I am <strong >Nahed Alsayd Ahmad</strong></h3>
-					<h3 class="mt-4 uppercase">I'm almost full-stack web developer</h3>
-				</div>
-				<div class="text-center ">
-					<ul class="list-inline">
-						<li class="list-inline-item ">
-							<a href="#about" class="custom-link">About </a>
-						</li>
-						<li class="list-inline-item ">
-							<a href="#projects" class="custom-link">My Projects</a>
-						</li>
-						<li class="list-inline-item ">
-							<a href="#contact" class="custom-link">Contact Me </a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!--* credit: code for vertical Tabs taken from https://bootstrapious.com/p/bootstrap-carousel-with-quotes and edited to fit project needs *-->
-		<section class="pb-5">
-			<div class="container">
-				<div class="row">
-					<div class="col mx-auto">
-						<div class="p-5 bg-white shadow rounded">
-							<!-- Bootstrap carousel-->
-							<div class="carousel slide" id="jobPass" data-ride="carousel">
-								<!-- Bootstrap carousel indicators [nav] -->
-								<ol class="carousel-indicators mb-0">
-									<li class="active" data-target="#jobPass" data-slide-to="0"></li>
-									<li data-target="#jobPass" data-slide-to="1"></li>
-									<li data-target="#jobPass" data-slide-to="2"></li>
-								</ol>
+  <div class="container justify-content-center align-items-center py-3">
+    <div class="row">
+      <div class="col">
+        <div class="py-5 text-center">
+          <h3 class="uppercase">I am <strong>Nahed Alsayd Ahmad</strong></h3>
+          <h3 class="mt-4 uppercase">I'm almost full-stack web developer</h3>
+        </div>
+        <div class="text-center pb-5">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="#aboutMe" class="custom-link">About Me </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#myprojects" class="custom-link">My Projects</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#contact" class="custom-link">Contact Me </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--* credit: code for carousel-container taken from https://bootstrapious.com/p/bootstrap-carousel-with-quotes and edited to fit project needs *-->
 
-								<!-- Bootstrap inner [slides]-->
-								<div class="carousel-inner px-5 pb-4">
-									<!-- Carousel slide-->
-									<div class="carousel-item active">
-										<div class="media">
-											<div class="media-body ml-3">
-												<blockquote class="blockquote border-0 p-0">
-													<h4 class="uppercase pb-3">
-														<i class="fa fa-question icon-about" aria-hidden="true"></i>
-														What do I do?
-													</h4>
-													<p class="font-italic lead">
-														I'm a skilled Full Stack Developer with a wealth of diverse life
-														and technical experience that I bring to every project.
-													</p>
-												</blockquote>
-											</div>
-										</div>
-									</div>
+    <div class="container pb-5">
+      <div class="row">
+        <div class="col mx-auto ">
+          <div class="p-5 bg-white shadow rounded">
+            <!-- Bootstrap carousel-->
+            <div class="carousel slide" id="jobPass" data-ride="carousel">
+              <!-- Bootstrap carousel indicators [nav] -->
+              <ol class="carousel-indicators mb-0">
+                <li
+                  class="active"
+                  data-target="#jobPass"
+                  data-slide-to="0"
+                ></li>
+                <li data-target="#jobPass" data-slide-to="1"></li>
+                <li data-target="#jobPass" data-slide-to="2"></li>
+              </ol>
 
-									<!-- Carousel slide-->
-									<div class="carousel-item">
-										<div class="media">
-											<div class="media-body ml-3">
-												<blockquote class="blockquote border-0 p-0">
-													<h4 class="uppercase pb-3">
-														<i class="icon-about fa fa-thumbs-up" aria-hidden="true"></i>
-														How do I do it?</h4>
-													<p class="font-italic lead">
-														I follow form as well as function. I know that the aesthetics of
-														effective design combined with application speed, security and
-														reliability combine to create a great user experience.
-													</p>
-												</blockquote>
-											</div>
-										</div>
-									</div>
+              <!-- Bootstrap inner [slides]-->
+              <div class="carousel-inner px-5 pb-4">
+                <!-- Carousel slide-->
+                <div class="carousel-item active">
+                  <div class="media">
+                    <div class="media-body ml-3">
+                      <blockquote class="blockquote border-0 p-0">
+                        <h4 class="uppercase pb-3">
+                          <i
+                            class="fa fa-question icon-about"
+                            aria-hidden="true"
+                          ></i>
+                          What do I do?
+                        </h4>
+                        <p class="font-italic lead">
+                          I'm a skilled Full Stack Developer with a wealth of
+                          diverse life and technical experience that I bring to
+                          every project.
+                        </p>
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
 
-									<!-- Carousel slide-->
-									<div class="carousel-item">
-										<div class="media">
-											<div class="media-body ml-3">
-												<blockquote class="blockquote border-0 p-0">
-													<h4 class="uppercase pb-3">
-														<i class="icon-about fa fa-bolt" aria-hidden="true"></i> Why
-														hire me?</h4>
-													<p class="font-italic lead">
-														I work quickly and effectively in getting things built and
-														working across the stack. I'm an excellent communicator who
-														thrives in bright and enthusiastic teams and I'm also a self
-														starter when working solo.
-													</p>
+                <!-- Carousel slide-->
+                <div class="carousel-item">
+                  <div class="media">
+                    <div class="media-body ml-3">
+                      <blockquote class="blockquote border-0 p-0">
+                        <h4 class="uppercase pb-3">
+                          <i
+                            class="icon-about fa fa-thumbs-up"
+                            aria-hidden="true"
+                          ></i>
+                          How do I do it?
+                        </h4>
+                        <p class="font-italic lead">
+                          I follow form as well as function. I know that the
+                          aesthetics of effective design combined with
+                          application speed, security and reliability combine to
+                          create a great user experience.
+                        </p>
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
 
-												</blockquote>
-											</div>
-										</div>
-									</div>
-								</div>
+                <!-- Carousel slide-->
+                <div class="carousel-item">
+                  <div class="media">
+                    <div class="media-body ml-3">
+                      <blockquote class="blockquote border-0 p-0">
+                        <h4 class="uppercase pb-3">
+                          <i
+                            class="icon-about fa fa-bolt"
+                            aria-hidden="true"
+                          ></i>
+                          Why hire me?
+                        </h4>
+                        <p class="font-italic lead">
+                          I work quickly and effectively in getting things built
+                          and working across the stack. I'm an excellent
+                          communicator who thrives in bright and enthusiastic
+                          teams and I'm also a self starter when working solo.
+                        </p>
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-								<!-- Bootstrap controls [dots]-->
-								<a class="carousel-control-prev width-auto" href="#jobPass" role="button"
-									data-slide="prev">
-									<i class="fa fa-angle-left text-dark text-lg"></i>
-									<span class="sr-only">Previous</span>
-								</a>
-								<a class="carousel-control-next width-auto" href="#jobPass" role="button"
-									data-slide="next">
-									<i class="fa fa-angle-right text-dark text-lg"></i>
-									<span class="sr-only">Next</span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+              <!-- Bootstrap controls [dots]-->
+              <a
+                class="carousel-control-prev width-auto"
+                href="#jobPass"
+                role="button"
+                data-slide="prev"
+              >
+                <i class="fa fa-angle-left text-dark text-lg"></i>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a
+                class="carousel-control-next width-auto"
+                href="#jobPass"
+                role="button"
+                data-slide="next"
+              >
+                <i class="fa fa-angle-right text-dark text-lg"></i>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="aboutMe" class="container-fluid about-container">
+  <div>
+    <h1 class="uppercase pt-5">About Me</h1>
+  </div>
+  <div class="row">
+    <div class="about-p-container col-md-12 col-lg-8 offset-lg-2">
+      <p class="about-p font-italic lead">
+        I am a junior software developer, who is looking to start a career as a
+        full-stack developer.<br/> I love to write codes, solve problems and learn
+        new languages.<br />
+        I believe that we can achieve our aims through commitment and hard work.
+      </p>
+    </div>
+  </div>
+  <div class="skill-list">
+    <h3 class="uppercase">Skills List</h3>
+  </div>
+  <!--* credit: code for Progress Circle taken from https://bootstrapious.com/p/circular-progress-bar and edited to fit project needs *-->
 
-	</div>
+  <div class="row progress-container">
+    {% for skill in data_skill %}
+    <div class="col mb-4">
+      <!-- Skills Progress -->
+      <div class="my_progress mx-auto" data-value="{{skill.percent}}">
+        <span class="progress-left">
+          <span class="progress-circle {{skill.colour}}"></span>
+        </span>
+        <span class="progress-right">
+          <span class="progress-circle {{skill.colour}}"></span>
+        </span>
+        <div class="progress-value">
+          <div>
+            <i class="{{skill.icon}} {{skill.colour}} progress-icon"></i>
+          </div>
+        </div>
+      </div>
+      <p class="progress-p">
+        {{skill.skill_name}} {{skill.percent}}<sup class="small">%</sup>
+      </p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+<section id="myprojects" class="container-fluid projects-container">
+  <h1>Portfolio</h1>
+  <h3 class="projects-p lead">
+    Here are a few projects that I've worked on recently.<br/> These are My Milestone
+    projects that I did while studing in Code Institute.
+  </h3>
+  {% for project in data_projects %} {% if loop.index % 2 != 0 %}
+  <!-- Projects -->
+    <div class="row project featurette">
+        <div class="project-desc col-md-7">
+        <h3 class="projects-p project-name">
+            {{ loop.index }}- {{project.project_name}}
+        </h3>
+        <p>{{project.project_description}}</p>
+        <ul class="list-inline ">
+            <li class="list-inline-item">
+            <a
+                class="icon-about"
+                href="{{project.github_url}}"
+                rel="noopener"
+                target="_blank"
+                aria-label="{{project.project_name}} Github repository"
+                ><i class="fab fa-github" aria-hidden="true"></i
+            ></a>
+            </li>
+            <li class="list-inline-item">
+            <a
+                class="icon-about"
+                href="{{project.live_url}}"
+                rel="noopener"
+                target="_blank"
+                aria-label="{{project.project_name}} live website"
+                ><i class="fas fa-globe" aria-hidden="true"></i
+            ></a>
+            </li>
+        </ul>
+        </div>
+        <div class="col-md-5">
+        <a
+            href="{{project.live_url}}"
+            rel="noopener"
+            target="_blank"
+            aria-label="{{project.project_name}} live website"
+            ><img
+            class="project-img"
+            src="{{project.project_image}}"
+            alt="{{project.project_name}} image"
+        /></a>
+        </div>
+    </div>
+  {% else %}
+      <div class="row project featurette">
+      <div class="col-md-5">
+        <a
+            href="{{project.live_url}}"
+            rel="noopener"
+            target="_blank"
+            aria-label="{{project.project_name}} live website"
+            ><img
+            class="project-img"
+            src="{{project.project_image}}"
+            alt="{{project.project_name}} image"
+        /></a>
+        </div>
+        <div class="project-desc col-md-7">
+        <h3 class="projects-p project-name">
+            {{ loop.index }}- {{project.project_name}}
+        </h3>
+        <p>{{project.project_description}}</p>
+        <ul class="list-inline">
+            <li class="list-inline-item">
+            <a
+                class="icon-about"
+                href="{{project.github_url}}"
+                rel="noopener"
+                target="_blank"
+                aria-label="{{project.project_name}} Github repository"
+                ><i class="fab fa-github" aria-hidden="true"></i
+            ></a>
+            </li>
+            <li class="list-inline-item">
+            <a
+                class="icon-about"
+                href="{{project.live_url}}"
+                rel="noopener"
+                target="_blank"
+                aria-label="{{project.project_name}} live website"
+                ><i class="fas fa-globe" aria-hidden="true"></i
+            ></a>
+            </li>
+        </ul>
+        </div>
+    </div>
+  {% endif %}
+  <hr class="solid mt-5 mx-auto " />
+  {% endfor %}
 </section>
 
 {% endblock %}

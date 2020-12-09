@@ -1,4 +1,5 @@
 import os
+import json
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -22,13 +23,20 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/profile")
 def profile():
+    data_skill = []
+    with open("data/skills.json", "r") as json_data:
+        data_skill = json.load(json_data)
+    data_projects = []
+    with open("data/projects.json", "r") as json_data:
+        data_projects = json.load(json_data)
     basics = mongo.db.basic_info.find()
     projects = mongo.db.projects.find()
     skills = mongo.db.skills.find()
     works = mongo.db.work_experience.find()
     return render_template(
-        "profile.html", basics=basics,
-        projects=projects, skills=skills, works=works)
+        "profile.html", basics=basics, projects=projects,
+        skills=skills, works=works,
+        data_skill=data_skill, data_projects=data_projects)
 
 
 @app.route("/shop")

@@ -44,7 +44,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto uppercase">
             <li class="nav-item active">
               <a class="nav-link" href="{{ url_for('profile') }}">My Profile</a>
             </li>
@@ -84,7 +84,7 @@
       <!--nav bar-->
     </header>
 
-    <section>
+    <section class="container-fluid">
       <!-- flash messages -->
       {% with messages = get_flashed_messages() %} {% if messages %} {% for
       message in messages %}
