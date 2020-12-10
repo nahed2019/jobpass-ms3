@@ -260,6 +260,7 @@ hr.solid {
 /* -------------------------------------about me-container/my profile*/
 
 .about-container {
+  min-height: 100vh;
   margin-bottom: 30px;
   margin-top: 80px;
   text-align: center;
@@ -458,8 +459,21 @@ hr.solid {
   box-shadow:  0 5px 10px 10px rgb(68, 67, 67);
 }
 
+/* -------------------------------------my contact/my profile*/
 
-
+.contact-container {
+  min-height: 90vh;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  box-shadow:  0 5px 10px 10px rgb(68, 67, 67);
+}
 
 
 

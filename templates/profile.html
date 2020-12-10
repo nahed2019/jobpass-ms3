@@ -17,7 +17,7 @@
               <a href="#myprojects" class="custom-link">My Projects</a>
             </li>
             <li class="list-inline-item">
-              <a href="#contact" class="custom-link">Contact Me </a>
+              <a href="#contactMe" class="custom-link">Contact Me </a>
             </li>
           </ul>
         </div>
@@ -139,6 +139,7 @@
     </div>
   </div>
 </section>
+<!-- About Me and My Skills -->
 <section id="aboutMe" class="container-fluid about-container">
   <div>
     <h1 class="uppercase pt-5">About Me</h1>
@@ -182,6 +183,7 @@
     {% endfor %}
   </div>
 </section>
+<!-- My Projects -->
 <section id="myprojects" class="container-fluid projects-container">
   <h1>Portfolio</h1>
   <h3 class="projects-p lead">
@@ -279,5 +281,85 @@
   <hr class="solid mt-5 mx-auto " />
   {% endfor %}
 </section>
-
+<!-- Contact form -->
+<section id="contactMe" class="container-fluid contact-container">
+    <h2 class="text-center uppercase py-3 ">Contact <strong>me</strong></h2>
+    <h4 class="text-center pt-3 "> Want an outstanding project? Have a job opportunity?</h4>
+    <h4 class="text-center pt-3 "> Just send me a message!</h4>
+    <div class= "row pt-3">
+        <div class= "col-md-8 py-3">
+            <form method="POST">
+                <div class="row">
+                    <div class="col-lg-6 pt-4">
+                        <input
+                            class="form-control form-control-md validate"
+                            placeholder="Your Name"
+                            id="name"
+                            name="name"
+                            type="text"
+                            required
+                        />
+                    </div>
+                    <div class="col-lg-6 pt-4">
+                        <input
+                            class="form-control form-control-md validate"
+                            placeholder="Email"
+                            id="email"
+                            name="email"
+                            type="text"
+                            required
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 pt-4">
+                        <input
+                            class="form-control form-control-md validate"
+                            placeholder="Subject"
+                            id="subject"
+                            name="subject"
+                            type="text"
+                            required
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 pt-4">
+                        <textarea
+                            class="form-control form-control-md validate"
+                            placeholder="Your Message"
+                            id="message"
+                            name="message"
+                            minlength="5"
+                            maxlength="200"
+                            required
+                        ></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col-12 pt-4">
+                  <button type="submit" class="btn-large btn-block">
+                    Send
+                    <i class="fas fa-envelope right"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+        </div>
+        <div class="col-md-4 pt-5">
+            <ul class="list-unstyled text-center">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>Berlin - Germany</p>
+                </li>
+                <li><i class="fas fa-phone fa-2x"></i>
+                    <p>+ 49 176 223 67829</p>
+                </li>
+                <li><i class="fas fa-envelope fa-2x"></i>
+                    <p>nanawalid@gmail.com</p>
+                 </li>
+            </ul>
+        </div>
+    </div>
+    
+</section>
 {% endblock %}
