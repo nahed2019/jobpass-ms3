@@ -39,6 +39,15 @@ def profile():
         data_skill=data_skill, data_projects=data_projects)
 
 
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        flash("Thanks {}, we have received your message!".format(
+            request.form.get("name")))
+
+    return render_template("profile.html")
+
+
 @app.route("/shop")
 def shop():
     basics = mongo.db.basic_info.find()
