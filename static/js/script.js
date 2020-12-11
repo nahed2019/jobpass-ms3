@@ -58,3 +58,9 @@ $(function() {
   }
 
 });
+
+/* credit: code for add-edit-and-delete-buttons taken from https://bootstrapious.com/p/bootstrap-add-edit-and-delete-buttons and edited to fit project needs */
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});

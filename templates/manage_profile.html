@@ -1,184 +1,211 @@
 {% extends "base.html" %} {% block content %}
 
 <section class="intro">
-  <div
-    class="container h-100 d-flex justify-content-center align-items-center py-3"
-  >
-    <div class="row">
-      <div class="col-md-12 pt-3">
-        {% for info in basic_info %} {% if session.user|lower ==
+    <div class="container h-100 d-flex justify-content-center align-items-center py-3">
+        <div class="row">
+            <div class="col-md-12 pt-3">
+                {% for info in basic_info %} {% if session.user|lower ==
         info.created_by|lower %}
-        <div class="text-center pt-5">
-          <h1 class="mt-4 uppercase">
-            <strong> {{ info.first_name }} {{ info.last_name }}</strong>
-          </h1>
-          <h2 class="mt-4 uppercase">
-            <strong>{{ info.cur_title }}</strong>
-          </h2>
+                <div class="text-center pt-5">
+                    <h1 class="mt-4 uppercase">
+                        <strong> {{ info.first_name }} {{ info.last_name }}</strong>
+                    </h1>
+                    <h2 class="mt-4 uppercase">
+                        <strong>{{ info.cur_title }}</strong>
+                    </h2>
+                </div>
+                {% endif%} {% endfor %}
+                <div class="text-center pt-3">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="#about" class="custom-link">About </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#projects" class="custom-link">Projects & Work Experience</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#skill" class="custom-link">Skills </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        {% endif%} {% endfor %}
-        <div class="text-center pt-3">
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <a href="#about" class="custom-link">About </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#projects" class="custom-link"
-                >Projects & Work Experience</a
-              >
-            </li>
-            <li class="list-inline-item">
-              <a href="#skill" class="custom-link">Skills </a>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
 
 <section id="about">
-  <div class="container py-3 justify-content-center align-items-center">
-    <h2 class="uppercase text-center py-5">About Me</h2>
-    <div class="row">
-      <!-- first column/languages -->
-      <div class="col-md-4 mb-2">
-        <!--Panel-->
-        <div class="card h-100 card-body justify-content-center card-about">
-          <span class="text-center"
-            ><i class="fas fa-language mb-4 fa-3x icon-about"></i
-          ></span>
-          {% for language in languages %} {% if session.user|lower
+    <div class="container py-3 justify-content-center align-items-center">
+        <h2 class="uppercase text-center py-5">About Me</h2>
+        <div class="row">
+            <!-- first column/languages -->
+            <div class="col-md-4 mb-2">
+                <!--Panel-->
+                <div class="card h-100 card-body justify-content-center card-about">
+                    <span class="text-center"><i class="fas fa-language mb-4 fa-3x icon-about"></i></span>
+                    {% for language in languages %} {% if session.user|lower
           ==language.created_by|lower %}
-          <ul class="list-unstyled">
-            <li>
-              <p>Language : {{ language.language_name }}</p>
-            </li>
-            <li>
-              <p>Level :{{ language.language_level }}</p>
-            </li>
-          </ul>
-          {% endif%} {% endfor %}
-        </div>
-        <!--Panel-->
-      </div>
-      {% for basic in basic_info %} {% if session.user|lower
+                    <ul class="list-unstyled">
+                        <li>
+                            <p>Language : {{ language.language_name }}</p>
+                        </li>
+                        <li>
+                            <p>Level :{{ language.language_level }}</p>
+                        </li>
+                    </ul>
+                    {% endif%} {% endfor %}
+                </div>
+                <!--Panel-->
+            </div>
+            {% for basic in basic_info %} {% if session.user|lower
       ==basic.created_by|lower %}
-      <!-- second column/basic_info -->
-      <div class="col-md-4 mb-2 order-first">
-        <!--Panel-->
-        <div class="card h-100 card-body card-about">
-          <i
-            class="fas fa-laptop fa-4x mb-5 text-center icon-about"
-            aria-hidden="true"
-          ></i>
-          <p class="mt-3 justify-content-center">
-            I am {{ basic.first_name }} {{ basic.last_name }}, and I am working
-            as {{ basic.cur_title }} <br />
-            I graduated from {{ basic.education }} <br />
-            {{ basic.about_me }}
-          </p>
+            <!-- second column/basic_info -->
+            <div class="col-md-4 mb-2 order-first">
+                <!--Panel-->
+                <div class="card h-100 card-body card-about">
+                    <i class="fas fa-laptop fa-4x mb-5 text-center icon-about" aria-hidden="true"></i>
+                    <p class="mt-3 justify-content-center">
+                        I am {{ basic.first_name }} {{ basic.last_name }}, and I am working
+                        as {{ basic.cur_title }} <br />
+                        I graduated from {{ basic.education }} <br />
+                        {{ basic.about_me }}
+                    </p>
+                </div>
+                <!--Panel-->
+            </div>
+            <!-- third column/contact info -->
+            <div class="col-md-4 mb-2 order-last">
+                <!--Panel-->
+                <div class="card h-100 card-body justify-content-center card-about">
+                    <ul class="list-unstyled text-center">
+                        <li>
+                            <i class="fas fa-map-marker-alt mb-2 fa-3x icon-about"></i>
+                            <p class="mb-3">{{ basic.adress }}</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone mb-2 fa-2x icon-about"></i>
+                            <p class="mb-3">{{ basic.phone }}</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope mb-2 fa-2x icon-about"></i>
+                            <p class="mb-3">{{ basic.email }}</p>
+                        </li>
+                    </ul>
+                </div>
+                <!--Panel-->
+            </div>
+            {% endif%} {% endfor %}
         </div>
-        <!--Panel-->
-      </div>
-      <!-- third column/contact info -->
-      <div class="col-md-4 mb-2 order-last">
-        <!--Panel-->
-        <div class="card h-100 card-body justify-content-center card-about">
-          <ul class="list-unstyled text-center">
-            <li>
-              <i class="fas fa-map-marker-alt mb-2 fa-3x icon-about"></i>
-              <p class="mb-3">{{ basic.adress }}</p>
-            </li>
-            <li>
-              <i class="fas fa-phone mb-2 fa-2x icon-about"></i>
-              <p class="mb-3">{{ basic.phone }}</p>
-            </li>
-            <li>
-              <i class="fas fa-envelope mb-2 fa-2x icon-about"></i>
-              <p class="mb-3">{{ basic.email }}</p>
-            </li>
-          </ul>
-        </div>
-        <!--Panel-->
-      </div>
-      {% endif%} {% endfor %}
     </div>
-  </div>
 </section>
 <hr class="solid mx-auto ">
 <section id="projects">
-  <div class="container py-3">
-    <div class="row">
-    <!--Projects info-->
-      <div class="col-md-6">
-        <h2 class="uppercase py-3">Projects</h2>
-        <p class="pb-2">
-          Here are a few projects that I've worked on recently.
-        </p>
-        {% for project in projects %} {% if session.user|lower ==
+    <div class="container py-3">
+        <div class="row">
+            <!--Projects info-->
+            <div class="col-md-6">
+                <h2 class="uppercase py-3">Projects</h2>
+                <p class="pb-2">
+                    Here are a few projects that I've worked on recently.
+                </p>
+                {% for project in projects %} {% if session.user|lower ==
         project.created_by|lower %}
-        <ul class="list-unstyled">
-          <li>
-            <h3>Project Name : {{ project.project_name }}</h3>
-          </li>
-          <li>
-            <p>Project Description :{{ project.project_desc }}</p>
-          </li>
-          <li>
-            <p>Project Link :{{ project.project_link }}</p>
-          </li>
-        </ul>
-        <hr />
-        {% endif%} {% endfor %}
-      </div>
-      <!--works experience info-->
-      <div class="col-md-6">
-        <h2 class="uppercase py-3">Work Experience</h2>
-        {% for work in works %} {% if session.user|lower ==
+                <div class="row">
+                    <div class="col-9">
+                        <ul class="list-unstyled">
+                            <li>
+                                <h3>Project Name : {{ project.project_name }}</h3>
+                            </li>
+                            <li>
+                                <p>Project Description :{{ project.project_desc }}</p>
+                            </li>
+                            <li>
+                                <p>Project Link :{{ project.project_link }}</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--credit: code for add-edit-and-delete-buttons taken from https://bootstrapious.com/p/bootstrap-add-edit-and-delete-buttons and edited to fit project needs-->
+                    <div class="coll-3">
+                        <ul class="list-inline m-0">
+                            <li class="list-inline-item">
+                                <a class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                    data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                    data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr />
+                {% endif%} {% endfor %}
+            </div>
+            <!--works experience info-->
+            <div class="col-md-6">
+                <h2 class="uppercase py-3">Work Experience</h2>
+                {% for work in works %} {% if session.user|lower ==
         work.created_by|lower %}
-        <div class="history-items">
-          <div
-            class="timeline-item"
-            data-dates="{{ work.from_date }} - {{ work.to_date }}"
-          >
-            <h4>{{ work.company_name }}</h4>
-            <p>{{ work.job_title }}</p>
-          </div>
+                <div class="history-items">
+                    <div class="timeline-item" data-dates="{{ work.from_date }} - {{ work.to_date }}">
+                        <h4>{{ work.company_name }}</h4>
+                        <p>{{ work.job_title }}</p>
+                        <div class="coll-2">
+                            <ul class="list-inline m-0">
+                                <li class="list-inline-item">
+                                    <a class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                        data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                        data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endif%} {% endfor %}
+            </div>
         </div>
-        {% endif%} {% endfor %}
-      </div>
     </div>
-  </div>
 </section>
 <hr class="solid mx-auto ">
-<!--skills info-->  
+<!--skills info-->
 <section id="skill">
-    <div  class="container py-3 justify-content-center align-items-center">
+    <div class="container py-3 justify-content-center align-items-center">
         <div class="row">
-        <div class="justify-content-center col-md-10 offset-md-1">
-            <h2 class="uppercase text-center py-3">skills list</h2>
-            {% for skill in skills %} {% if
+            <div class="justify-content-center col-md-10 offset-md-1">
+                <h2 class="uppercase text-center py-3">skills list</h2>
+                {% for skill in skills %} {% if
             session.user|lower==skill.created_by|lower%}
-            <p class="text-uppercase font-weight-bold" align="justify">
-            {{skill.skill_name}}
-            </p>
-            <div class="progress mt-3">
-            <div
-                class="progress-bar progress-bg"
-                role="progressbar"
-                aria-valuenow="{{skill.percent}}"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="width: {{skill.percent}}%"
-            ></div>
-            <span class="progress-type">{{ skill.percent }}%</span>
+                <div class="row">
+                    <div class="col">
+                    <p class="text-uppercase font-weight-bold" align="justify">
+                        {{skill.skill_name}}
+                    </p>
+                    </div>
+                    <div class="coll-3">
+                        <ul class="list-inline m-0">
+                            <li class="list-inline-item">
+                                <a class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                    data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                    data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="progress mt-3">
+                    <div class="progress-bar progress-bg" role="progressbar" aria-valuenow="{{skill.percent}}"
+                        aria-valuemin="0" aria-valuemax="100" style="width: {{skill.percent}}%"></div>
+                    <span class="progress-type">{{ skill.percent }}%</span>
+                </div>
+                <hr />
+                {% endif%} {% endfor %}
             </div>
-            <hr />
-            {% endif%} {% endfor %}
         </div>
-        </div>
-  </div>
+    </div>
 </section>
 
 {% endblock %}
