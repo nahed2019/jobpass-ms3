@@ -1,0 +1,62 @@
+{% extends "base.html" %} {% block content %}
+
+<h2 class="text-center p-5 h2-custom">Edit Project</h2>
+
+<div class="justify-content-center card col-md-8 offset-md-2 custom-card">
+    <div class="card-body">
+        <form class="card-text" method="POST" action="{{ url_for('edit_project', project_id=project._id) }}">
+            <div class="row">
+                <!--project name -->
+                <div class="input-group col-12 mb-4">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text icon-color">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                    </div>
+                    <input class="form-control form-control-lg validate" placeholder="Project Name" id="project_name"
+                        name="project_name" type="text" required />
+                </div>
+            </div>
+
+            <!-- Project Link -->
+            <div class="row">
+                <div class="input-group col-12 mb-4">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text icon-color">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                    </div>
+                    <input class="form-control form-control-lg validate" placeholder="Project Link" id="project_link"
+                        name="project_link" type="text" required />
+                </div>
+            </div>
+
+            <!-- Project Description -->
+            <div class="row">
+                <div class="input-group col-12 mb-4">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text icon-color">
+                            <i class="fas fa-align-left"></i>
+                        </div>
+                    </div>
+                    <textarea class="form-control form-control-lg validate" placeholder="Project Description"
+                        id="project_desc" name="project_desc" minlength="5" maxlength="200" required></textarea>
+                </div>
+            </div>
+
+            <!-- submit button -->
+            <div class="row">
+                <div class="col-12">
+                    <button type="submit" class="btn-large btn-block">
+                        Edit Your Project Information
+                        <i class="fas fa-edit right"></i>
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

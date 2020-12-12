@@ -39,6 +39,7 @@ def profile():
         data_skill=data_skill, data_projects=data_projects)
 
 
+# Route for contact form in my profile
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
@@ -48,6 +49,7 @@ def contact():
     return render_template("profile.html")
 
 
+# Route for profile shop
 @app.route("/shop")
 def shop():
     basics = mongo.db.basic_info.find()
@@ -81,6 +83,7 @@ def register():
     return render_template("register.html")
 
 
+# Route for login
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -109,6 +112,7 @@ def login():
     return render_template("login.html")
 
 
+# Route for add profile
 @app.route("/add_profile/<username>", methods=["GET", "POST"])
 def add_profile(username):
     # grab the session user's username from db
@@ -119,6 +123,7 @@ def add_profile(username):
     return redirect(url_for("login"))
 
 
+# Route for add basic info in add profile
 @app.route("/basic_info", methods=["GET", "POST"])
 def basic_info():
     if request.method == "POST":
@@ -140,6 +145,7 @@ def basic_info():
     return render_template("add_profile.html")
 
 
+# Route for add project info in add profile
 @app.route("/add_project", methods=["GET", "POST"])
 def add_project():
     if request.method == "POST":
@@ -156,6 +162,7 @@ def add_project():
     return render_template("add_profile.html")
 
 
+# Route for add work expeiience in add profile
 @app.route("/work_experience", methods=["GET", "POST"])
 def work_experience():
     if request.method == "POST":
@@ -173,6 +180,7 @@ def work_experience():
     return render_template("add_profile.html")
 
 
+# Route for add skills in add profile
 @app.route("/skills", methods=["GET", "POST"])
 def skills():
     if request.method == "POST":
@@ -188,6 +196,7 @@ def skills():
     return render_template("add_profile.html")
 
 
+# Route for add languges in add profile
 @app.route("/languages", methods=["GET", "POST"])
 def languages():
     if request.method == "POST":
@@ -203,6 +212,7 @@ def languages():
     return render_template("add_profile.html")
 
 
+# Route for manage profile
 @app.route("/manage_profile/<username>", methods=["GET", "POST"])
 def manage_profile(username):
     if session["user"]:
@@ -219,6 +229,13 @@ def manage_profile(username):
             basic_info=basic_info, projects=projects,
             skills=skills, works=works, languages=languages)
     return redirect(url_for("login"))
+
+
+# Route for edit projects in manage profile
+@app.route("/edit_project/<project_id>", methods=["GET", "POST"])
+def edit_project(project_id):
+    project = mongo.db.projects.find_one({"_id": ObjectId(project_id)})
+    return render_template("edit_project.html", project=project)
 
 
 @app.route("/logout")
