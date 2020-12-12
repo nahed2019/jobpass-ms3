@@ -248,6 +248,22 @@ def edit_project(project_id):
     return render_template("edit_project.html", project=project)
 
 
+# Route for edit skills in manage profile
+@app.route("/edit_skill/<skill_id>", methods=["GET", "POST"])
+def edit_skill(skill_id):
+    if request.method == "POST":
+        skills = {
+            "skill_name": request.form.get("skill_name"),
+            "percent": request.form.get("percent"),
+            "created_by": session["user"]
+        }
+        mongo.db.skills.update({"_id": ObjectId(skill_id)}, skills)
+        flash(
+            "Skill Information Successfully updated")
+    skill = mongo.db.skills.find_one({"_id": ObjectId(skill_id)})
+    return render_template("edit_skill.html", skill=skill)
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookie
