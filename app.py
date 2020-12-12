@@ -248,6 +248,26 @@ def edit_project(project_id):
     return render_template("edit_project.html", project=project)
 
 
+# Route for edit experience in manage profile
+@app.route("/edit_experience/<experience_id>", methods=["GET", "POST"])
+def edit_experience(experience_id):
+    if request.method == "POST":
+        works = {
+            "job_title": request.form.get("job_title"),
+            "company_name": request.form.get("company_name"),
+            "from_date": request.form.get("from_date"),
+            "to_date": request.form.get("to_date"),
+            "created_by": session["user"]
+        }
+        mongo.db.work_experience.update({"_id": ObjectId(
+            experience_id)}, works)
+        flash(
+            "Work Experience Information Successfully updated")
+    work = mongo.db.work_experience.find_one(
+        {"_id": ObjectId(experience_id)})
+    return render_template("edit_experience.html", work=work)
+
+
 # Route for edit skills in manage profile
 @app.route("/edit_skill/<skill_id>", methods=["GET", "POST"])
 def edit_skill(skill_id):
@@ -259,7 +279,7 @@ def edit_skill(skill_id):
         }
         mongo.db.skills.update({"_id": ObjectId(skill_id)}, skills)
         flash(
-            "Skill Information Successfully updated")
+            " Skill Information Successfully updated")
     skill = mongo.db.skills.find_one({"_id": ObjectId(skill_id)})
     return render_template("edit_skill.html", skill=skill)
 

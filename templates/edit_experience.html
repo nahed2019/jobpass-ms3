@@ -1,0 +1,101 @@
+{% extends "base.html" %} {% block content %}
+
+<h2 class="text-center p-5 h2-custom">Edit Work Experience</h2>
+
+<div class="justify-content-center card col-md-8 offset-md-2 custom-card">
+    <div class="card-body">
+        <form class="card-text" method="POST" action="{{ url_for('edit_experience', experience_id=work._id) }}">
+           <div class="row">
+                <!--job name -->
+                <div class="input-group col-12 mb-4">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text icon-color">
+                      <i class="fas fa-hard-hat"></i>
+                    </div>
+                  </div>
+                  <input
+                    class="form-control form-control-lg validate"
+                    value="{{ work.job_title }}"
+                    id="job_title"
+                    name="job_title"
+                    type="text"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- company  -->
+              <div class="row">
+                <div class="input-group col-12 mb-4">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text icon-color">
+                      <i class="fas fa-building"></i>
+                    </div>
+                  </div>
+                  <input
+                    class="form-control form-control-lg validate"
+                    value="{{ work.company_name }}"
+                    id="company_name"
+                    name="company_name"
+                    type="text"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- from/to date -->
+              <div class="row">
+                <div class="input-group col-6 mb-4 datepicker date">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text icon-color">
+                      <i class="fas fa-calendar"></i>
+                    </div>
+                  </div>
+                  <input
+                    type="date"
+                    value="{{ work.from_date }}"
+                    class="form-control form-control-lg validate"
+                    id="from_date"
+                    name="from_date"
+                    required
+                  />
+                </div>
+                <div class="input-group col-6 mb-4 datepicker date">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text icon-color">
+                      <i class="fas fa-calendar"></i>
+                    </div>
+                  </div>
+                  <input
+                    type="date"
+                    value="{{ work.to_date }}"
+                    class="form-control form-control-lg validate"
+                    id="to_date"
+                    name="to_date"
+                    required
+                  />
+                </div>
+              </div>
+
+            <!-- submit button -->
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- cancel button -->
+                    <a href="{{ url_for('manage_profile', username=session['user'])}}" class="btn-large btn-block text-center pt-3">
+                        Cancel <i class="fas fa-times-circle right"></i>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                <button type="submit" class="btn-large btn-block">
+                    Edit Work Experience Information
+                    <i class="fas fa-edit right"></i>
+                </button>
+            </div>
+    </div>
+
+    </form>
+</div>
+</div>
+
+
+{% endblock %}
