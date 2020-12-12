@@ -13,8 +13,8 @@
                             <i class="fas fa-project-diagram"></i>
                         </div>
                     </div>
-                    <input class="form-control form-control-lg validate" placeholder="Project Name" id="project_name"
-                        name="project_name" type="text" required />
+                    <input class="form-control form-control-lg validate" value="{{ project.project_name }}"
+                        id="project_name" name="project_name" type="text" required />
                 </div>
             </div>
 
@@ -26,8 +26,8 @@
                             <i class="fas fa-globe"></i>
                         </div>
                     </div>
-                    <input class="form-control form-control-lg validate" placeholder="Project Link" id="project_link"
-                        name="project_link" type="text" required />
+                    <input class="form-control form-control-lg validate" value="{{ project.project_link }}"
+                        id="project_link" name="project_link" type="text" required />
                 </div>
             </div>
 
@@ -40,22 +40,29 @@
                         </div>
                     </div>
                     <textarea class="form-control form-control-lg validate" placeholder="Project Description"
-                        id="project_desc" name="project_desc" minlength="5" maxlength="200" required></textarea>
+                        id="project_desc" name="project_desc" minlength="5" maxlength="200"
+                        required>{{- project.project_desc -}}</textarea>
                 </div>
             </div>
 
             <!-- submit button -->
             <div class="row">
-                <div class="col-12">
-                    <button type="submit" class="btn-large btn-block">
-                        Edit Your Project Information
-                        <i class="fas fa-edit right"></i>
-                    </button>
+                <div class="col-md-6">
+                    <!-- cancel button -->
+                    <a href="{{ url_for('manage_profile', username=session['user'])}}" class="btn-large btn-block text-center pt-3">
+                        Cancel <i class="fas fa-times-circle right"></i>
+                    </a>
                 </div>
+                <div class="col-md-6">
+                <button type="submit" class="btn-large btn-block">
+                    Edit Your Project Information
+                    <i class="fas fa-edit right"></i>
+                </button>
             </div>
-
-        </form>
     </div>
+
+    </form>
+</div>
 </div>
 
 
