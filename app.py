@@ -248,6 +248,14 @@ def edit_project(project_id):
     return render_template("edit_project.html", project=project)
 
 
+# Route for delete projects in manage profile
+@app.route("/delete_project/<project_id>")
+def delete_project(project_id):
+    mongo.db.projects.remove({"_id": ObjectId(project_id)})
+    flash("Projects Info Successfully deleted")
+    return render_template("manage_profile.html")
+
+
 # Route for edit experience in manage profile
 @app.route("/edit_experience/<experience_id>", methods=["GET", "POST"])
 def edit_experience(experience_id):
@@ -268,6 +276,14 @@ def edit_experience(experience_id):
     return render_template("edit_experience.html", work=work)
 
 
+# Route for delete Work Experience in manage profile
+@app.route("/delete_experience/<experience_id>")
+def delete_experience(experience_id):
+    mongo.db.work_experience.remove({"_id": ObjectId(experience_id)})
+    flash("Work Experience Info Successfully deleted")
+    return render_template("manage_profile.html")
+
+
 # Route for edit skills in manage profile
 @app.route("/edit_skill/<skill_id>", methods=["GET", "POST"])
 def edit_skill(skill_id):
@@ -282,6 +298,14 @@ def edit_skill(skill_id):
             " Skill Information Successfully updated")
     skill = mongo.db.skills.find_one({"_id": ObjectId(skill_id)})
     return render_template("edit_skill.html", skill=skill)
+
+
+# Route for delete Work Experience in manage profile
+@app.route("/delete_skill/<skill_id>")
+def delete_skill(skill_id):
+    mongo.db.skills.remove({"_id": ObjectId(skill_id)})
+    flash("Skill Information Successfully deleted")
+    return render_template("manage_profile.html")
 
 
 @app.route("/logout")

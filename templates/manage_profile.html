@@ -132,7 +132,7 @@
                                     data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                <a href="{{ url_for('delete_project', project_id=project._id) }}" class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
                                     data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
                             </li>
                         </ul>
@@ -158,7 +158,7 @@
                                         data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                    <a href="{{ url_for('delete_experience', experience_id=work._id) }}" class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
                                         data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
                                 </li>
                             </ul>
@@ -193,7 +193,7 @@
                                     data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                <a href="{{ url_for('delete_skill', skill_id=skill._id) }}" class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
                                     data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
                             </li>
                         </ul>
