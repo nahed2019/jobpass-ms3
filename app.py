@@ -162,7 +162,7 @@ def add_project():
     return render_template("add_profile.html")
 
 
-# Route for add work expeiience in add profile
+# Route for add work experience in add profile
 @app.route("/work_experience", methods=["GET", "POST"])
 def work_experience():
     if request.method == "POST":
@@ -234,6 +234,16 @@ def manage_profile(username):
 # Route for edit projects in manage profile
 @app.route("/edit_project/<project_id>", methods=["GET", "POST"])
 def edit_project(project_id):
+    if request.method == "POST":
+        projects = {
+            "project_name": request.form.get("project_name"),
+            "project_desc": request.form.get("project_desc"),
+            "project_link": request.form.get("project_link"),
+            "created_by": session["user"]
+        }
+        mongo.db.projects.update({"_id": ObjectId(project_id)}, projects)
+        flash(
+            "Projects Info Successfully updated")
     project = mongo.db.projects.find_one({"_id": ObjectId(project_id)})
     return render_template("edit_project.html", project=project)
 
