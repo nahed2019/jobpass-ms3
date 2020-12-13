@@ -126,7 +126,8 @@ and edited slightly to fit project needs */
 }
 
 .card-bg {
-  background-color: #f3a7a7;
+  background-color: #f3f1f1;
+  box-shadow:  0 5px 10px 10px rgb(68, 67, 67);
 }
 
 /* ----------------------------------------------intro section/Manage Profile */

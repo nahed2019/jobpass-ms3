@@ -57,6 +57,13 @@ def shop():
         "shop.html", basics=basics)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    basics = list(mongo.db.basic_info.find({"$text": {"$search": query}}))
+    return render_template("shop.html", basics=basics)
+
+
 # Route for register
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -251,9 +258,13 @@ def edit_project(project_id):
 # Route for delete projects in manage profile
 @app.route("/delete_project/<project_id>")
 def delete_project(project_id):
-    mongo.db.projects.remove({"_id": ObjectId(project_id)})
-    flash("Projects Info Successfully deleted")
-    return render_template("manage_profile.html")
+    if session["user"]:
+        # grab the session user's username from db
+        username = mongo.db.users.find_one(
+                {"username": session["user"]})["username"]
+        mongo.db.projects.remove({"_id": ObjectId(project_id)})
+        flash("Projects Info Successfully deleted")
+        return redirect(url_for("manage_profile", username=username))
 
 
 # Route for edit experience in manage profile
@@ -279,9 +290,13 @@ def edit_experience(experience_id):
 # Route for delete Work Experience in manage profile
 @app.route("/delete_experience/<experience_id>")
 def delete_experience(experience_id):
-    mongo.db.work_experience.remove({"_id": ObjectId(experience_id)})
-    flash("Work Experience Info Successfully deleted")
-    return render_template("manage_profile.html")
+    if session["user"]:
+        # grab the session user's username from db
+        username = mongo.db.users.find_one(
+                {"username": session["user"]})["username"]
+        mongo.db.work_experience.remove({"_id": ObjectId(experience_id)})
+        flash("Work Experience Info Successfully deleted")
+        return redirect(url_for("manage_profile", username=username))
 
 
 # Route for edit skills in manage profile
@@ -300,12 +315,16 @@ def edit_skill(skill_id):
     return render_template("edit_skill.html", skill=skill)
 
 
-# Route for delete Work Experience in manage profile
+# Route for delete skill in manage profile
 @app.route("/delete_skill/<skill_id>")
 def delete_skill(skill_id):
-    mongo.db.skills.remove({"_id": ObjectId(skill_id)})
-    flash("Skill Information Successfully deleted")
-    return render_template("manage_profile.html")
+    if session["user"]:
+        # grab the session user's username from db
+        username = mongo.db.users.find_one(
+                {"username": session["user"]})["username"]
+        mongo.db.skills.remove({"_id": ObjectId(skill_id)})
+        flash("Skill Information Successfully deleted")
+        return redirect(url_for("manage_profile", username=username))
 
 
 @app.route("/logout")
