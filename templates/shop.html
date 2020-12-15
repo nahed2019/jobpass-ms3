@@ -19,7 +19,7 @@
         </div>
     </form>
 </div>
-
+{% if basics|length > 0 %}
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center ">
     {% for basic in basics %}
     <div class="card card-bg card-shop">
@@ -39,5 +39,9 @@
     </div>
     {% endfor %}
 </div>
+{% else %}
+<h3 class="text-center">No Results Found</h3>
+{% endif %}
+
 
 {% endblock %}

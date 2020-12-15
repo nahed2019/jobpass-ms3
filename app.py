@@ -52,7 +52,7 @@ def contact():
 # Route for profile shop
 @app.route("/shop")
 def shop():
-    basics = mongo.db.basic_info.find()
+    basics = list(mongo.db.basic_info.find())
     return render_template(
         "shop.html", basics=basics)
 

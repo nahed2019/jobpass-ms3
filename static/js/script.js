@@ -30,7 +30,8 @@ function topFunction() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-/* credit: code for Progress Circle taken from https://bootstrapious.com/p/circular-progress-bar and edited to fit project needs */
+/**
+ *  credit: code for Progress Circle taken from https://bootstrapious.com/p/circular-progress-bar and edited to fit project needs */
 
 $(function() {
 
@@ -64,3 +65,28 @@ $(function() {
 $(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
+
+
+/*
+*-----------------emailJs*
+*/
+
+function sendMail(contactForm) {
+  emailjs.send("gmail","job-pass", {
+      from_name: contactForm.name.value,
+      from_email: contactForm.email.value,
+      from_subject: contactForm.subject.value,
+      from_message: contactForm.message.value
+    })
+    .then(
+      function (response) {
+        location.reload();
+        console.log("SUCCESS", response);
+      },
+      function (error) {
+        console.log("FAILED", error);
+      }
+    );
+  return false; // To block from loading a new page
+}
+

@@ -12,7 +12,8 @@
         type="text/css" />
     <link rel="shortcut icon" href="#" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
-    
+    {% block script %}
+    {% endblock %}
     <title>Job Pass</title>
 </head>
 
@@ -88,8 +89,7 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    {% block scripts %}
-    {% endblock %}
+        
 </body>
 
 </html>
