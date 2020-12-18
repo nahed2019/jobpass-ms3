@@ -12,17 +12,23 @@
   background-color: #f3a7a7;
   max-height: 50px;
   padding: 15px 5px;
-  font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
 
 .body-custom {
   background: linear-gradient(to left, #4a6274, #d9e5ee);
+  font-family: "Roboto", sans-serif;
 }
 
 .uppercase {
     text-transform: uppercase;
 }
+
+hr.solid {
+  border-top: 2px solid #4a6274;
+  width:85%;
+}
+
 
 /* ------------------------------------------------NAVBAR */
 
@@ -32,18 +38,36 @@
 
 .navbar-brand {
   padding: 10px 5px;
-  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 40px;
 }
 
 .nav-item {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 20px;
   padding-left: 5px;
 }
 
+/* -------------------------------------base/footer*/
+
+.footer-container {
+  min-height: 100px;
+  margin-top: 20px;
+  justify-content: center;
+  background-color: #4a6274;
+}
+
+.icon-footer {
+   color: #f3a7a7; 
+}
+
+.footer-link{
+   color: #212529;
+}
+
+.footer-link:hover{
+   color: #f3a7a7;
+}
 /* ------------------------------------------------Register/login */
 
 .icon-color {
@@ -56,30 +80,30 @@
   color: #f3a7a7;
   background-color: #4a6274;
   height: 50px;
-  font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 18px;
 }
 
-.btn-large:hover,
-.btn-large:focus {
+.btn-large:hover {
   color: #4a6274;
   background-color: #f3a7a7;
 }
 
 .h2-custom {
   color: #4a6274;
-  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 50px;
 }
 
 .custom-link {
   color: #2d3c47;
-  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 20px;
   text-decoration: underline;
+}
+
+.custom-link:hover {
+    color: #f3a7a7;
 }
 
 /* ------------------------------------------------Add Profile */
@@ -150,10 +174,7 @@ and edited slightly to fit project needs */
     color: #4a6274;
 }
 
-hr.solid {
-  border-top: 2px solid #4a6274;
-  width:85%;
-}
+
 /* ----------------------------------------------Work history/Manage Profile */
 
 .history-heading {
@@ -475,7 +496,6 @@ hr.solid {
   width: 85%;
   box-shadow:  0 5px 10px 10px rgb(68, 67, 67);
 }
-
 
 
 

@@ -73,7 +73,67 @@
         </div>
         {% endfor %} {% endif %} {% endwith %}
     </section>
+
     <main class="container-fluid">{% block content %} {% endblock %}</main>
+
+    <footer class="container-fluid footer-container mt-5 align-content-center justify-content-center">
+        <div class="row pt-3 pl-3">
+            <div class="col-md-6  ">
+                <h5 class="uppercase ">About Project</h5>
+                <p class="font-italic">Jobpass was created by me Nahed Alsayed, as a portfolio to include all created projects as
+                    well as to serve all users to create their own portfolios.
+                    The goal of this project is the ability to create portfolio includes Personal information, Work
+                    Experience, and Projects for with the facility to generate curriculum vitae (CV) as a link or
+                    PDF.
+                </p>
+            </div>
+            <div class="col-md-3 pl-4">
+                <h5 class="uppercase ">Download</h5>
+                <p class="font-italic">
+                    Need a printable version of my CV?<br />
+                    Download it here.
+                    <a href="#" target="_blank" class="cv-pdf">
+                        <i class="fa fa-download icon-footer fa-2x" aria-hidden="true"></i>
+                        <span class="sr-only">Download link.</span>
+                    </a>
+                </p>
+            </div>
+            <div class="col-md-3 pl-4">
+                <h5 class="uppercase">Popular links </h5>
+                <a href="#" class="footer-link font-italic">FAQ's</a><br>
+                <a href="#" class="footer-link font-italic">Privacy Policy</a><br>
+                <a href="#" class="footer-link font-italic">Create an account</a><br>
+                <a href="#" class="footer-link font-italic">Log in</a>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            
+            <div class=" col-md-9 ">
+                <h5 class="uppercase ">Stay Connected</h5>
+                <a  href="https://www.facebook.com/" target="_blank"
+                    aria-label=" Facebook" rel="noopener">
+                    <i class="fab fa-facebook icon-color fa-2x p-1"></i>
+                </a>
+                <a  href="https://www.instagram.com/" target="_blank"
+                    aria-label="Instagram" rel="noopener">
+                    <i class="fab fa-instagram icon-color fa-2x p-1"></i>
+                </a>
+                <a  href="https://www.twitter.com/" target="_blank"
+                    aria-label="Twitter" rel="noopener">
+                    <i class="fab fa-twitter icon-color fa-2x" p-1></i>
+                </a>
+                <a  href="https://www.github.com/" target="_blank"
+                    aria-label=" Github" rel="noopener">
+                    <i class="fab fa-github icon-color fa-2x" p-1></i>
+                </a>
+            </div>
+            <div class=" col-md-3 align-bottom">
+                <small class="pt-5">Copyright 2020 all rights reserved</small>
+            </div>
+        </div>
+
+    </footer>
 
     <!--/* credit: code for floating buttons taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
     and edited slightly to fit project needs */-->
@@ -89,7 +149,7 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-        
+
 </body>
 
 </html>
