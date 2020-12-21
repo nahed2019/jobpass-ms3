@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block content %}
 
 <section class="intro">
-    <div class="container h-100 d-flex justify-content-center align-items-center py-3">
+    <div class="container d-flex justify-content-center align-items-center py-3">
         <div class="row">
             <div class="col-md-12 pt-3">
                 {% for info in basic_info %} {% if session.user|lower ==
@@ -129,11 +129,11 @@
                             <li class="list-inline-item">
                                 <a href="{{ url_for('edit_project', project_id=project._id) }}"
                                     class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
-                                    data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                                    data-placement="top" title="Edit"><i class="fa fa-edit fa-2x"></i></a>
                             </li>
                             <li class="list-inline-item">
                                 <a href="{{ url_for('delete_project', project_id=project._id) }}" class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
-                                    data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+                                    data-placement="top" title="Delete"><i class="fa fa-trash fa-2x"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -155,11 +155,11 @@
                                 <li class="list-inline-item">
                                     <a href="{{ url_for('edit_experience', experience_id=work._id) }}"
                                         class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
-                                        data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                                        data-placement="top" title="Edit"><i class="fa fa-edit fa-2x"></i></a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="{{ url_for('delete_experience', experience_id=work._id) }}" class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
-                                        data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+                                        data-placement="top" title="Delete"><i class="fa fa-trash fa-2x"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -190,11 +190,11 @@
                             <li class="list-inline-item">
                                 <a href="{{ url_for('edit_skill', skill_id=skill._id) }}"
                                     class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
-                                    data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                                    data-placement="top" title="Edit"><i class="fa fa-edit fa-2x"></i></a>
                             </li>
                             <li class="list-inline-item">
                                 <a href="{{ url_for('delete_skill', skill_id=skill._id) }}" class="btn icon-about btn-sm rounded-0" type="button" data-toggle="tooltip"
-                                    data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+                                    data-placement="top" title="Delete"><i class="fa fa-trash fa-2x"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -210,5 +210,10 @@
         </div>
     </div>
 </section>
+<div class="text-center">
+    <p>you can download your profile as Pdf here</p>
+    <a href="{{ url_for('pdf_template', username=session['user'])}}" class="btn icon-footer btn-sm rounded-0" type="button" data-placement="top" title="pdf">
+        <i class="fa fa-download fa-2x"></i></a>
+</div>
 
 {% endblock %}

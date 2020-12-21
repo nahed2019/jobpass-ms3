@@ -1,8 +1,9 @@
 import os
 import json
+import weasyprint
 from flask import (
     Flask, flash, render_template,
-    redirect, request, session, url_for)
+    redirect, request, session, url_for, make_response)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -19,7 +20,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# Route for index
+# Route for index/My Ptofile
 @app.route("/")
 @app.route("/profile")
 def profile():
@@ -29,39 +30,23 @@ def profile():
     data_projects = []
     with open("data/projects.json", "r") as json_data:
         data_projects = json.load(json_data)
-    basics = mongo.db.basic_info.find()
-    projects = mongo.db.projects.find()
-    skills = mongo.db.skills.find()
-    works = mongo.db.work_experience.find()
     return render_template(
-        "profile.html", basics=basics, projects=projects,
-        skills=skills, works=works,
-        data_skill=data_skill, data_projects=data_projects)
+        "profile.html", data_skill=data_skill, data_projects=data_projects)
 
 
-# Route for contact form in my profile
-@app.route("/contact", methods=["GET", "POST"])
-def contact():
-    if request.method == "POST":
-        flash("Thanks {}, we have received your message!".format(
-            request.form.get("name")))
-
-    return render_template("profile.html")
+# Route for Portfolios page
+@app.route("/portfolios")
+def portfolios():
+    basics = list(mongo.db.basic_info.find().sort("first_name", 1))
+    return render_template("portfolios.html", basics=basics)
 
 
-# Route for profile shop
-@app.route("/shop")
-def shop():
-    basics = list(mongo.db.basic_info.find())
-    return render_template(
-        "shop.html", basics=basics)
-
-
+# Route for search in portfolios page
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     basics = list(mongo.db.basic_info.find({"$text": {"$search": query}}))
-    return render_template("shop.html", basics=basics)
+    return render_template("portfolios.html", basics=basics)
 
 
 # Route for register
@@ -117,6 +102,14 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+@app.route("/logout")
+def logout():
+    # remove user from session cookie
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 # Route for add profile
@@ -220,22 +213,52 @@ def languages():
 
 
 # Route for manage profile
+def return_user_data(username):
+    username = mongo.db.users.find_one(
+                {"username": username})["username"]
+    basic_info = list(mongo.db.basic_info.find())
+    projects = mongo.db.projects.find()
+    skills = mongo.db.skills.find()
+    works = mongo.db.work_experience.find()
+    languages = mongo.db.languages.find()
+    return render_template(
+        "manage_profile.html", username=username,
+        basic_info=basic_info, projects=projects,
+        skills=skills, works=works, languages=languages)
+
+
+# Route to get data from manage profile for pass it to pdf
+# credit :this code written after get some help from my mentor
 @app.route("/manage_profile/<username>", methods=["GET", "POST"])
 def manage_profile(username):
+    try:
+        internal_request = False
+        if 'weasy' in request.headers['User-Agent']:
+            internal_request = True
+            return return_user_data(username)
+
+        if session['user']:
+            # grab the session user's username from db
+            return return_user_data(username)
+    except Exception as e:
+        # This will trigger if session user is not set
+        return redirect(url_for("login"))
+
+
+# Route for convert manage profile to pdf
+@app.route("/pdf_template/<username>")
+def pdf_template(username):
     if session["user"]:
-        # grab the session user's username from db
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
-        basic_info = list(mongo.db.basic_info.find())
-        projects = mongo.db.projects.find()
-        skills = mongo.db.skills.find()
-        works = mongo.db.work_experience.find()
-        languages = mongo.db.languages.find()
-        return render_template(
-            "manage_profile.html", username=username,
-            basic_info=basic_info, projects=projects,
-            skills=skills, works=works, languages=languages)
-    return redirect(url_for("login"))
+        pdf = weasyprint.HTML(
+            request.url_root + '/manage_profile/' + username).write_pdf()
+        response = make_response(pdf)
+        response.headers['Content-Type'] = 'application/pdf'
+        response.headers[
+            'Content-Disposition'] = 'attachment; filename=output.pdf'
+
+        return response
 
 
 # Route for edit projects in manage profile
@@ -325,14 +348,6 @@ def delete_skill(skill_id):
         mongo.db.skills.remove({"_id": ObjectId(skill_id)})
         flash("Skill Information Successfully deleted")
         return redirect(url_for("manage_profile", username=username))
-
-
-@app.route("/logout")
-def logout():
-    # remove user from session cookie
-    flash("You have been logged out")
-    session.pop("user")
-    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
