@@ -79,14 +79,17 @@ function sendMail(contactForm) {
       from_message: contactForm.message.value
     })
     .then(
+      // if the funciton is successful
       function (response) {
         location.reload();
-        console.log("SUCCESS", response);
+        alert("Your Message was sent successfully");
       },
+      // if the funciton has a problem
       function (error) {
-        console.log("FAILED", error);
+        alert(
+          "There was a problem with the server. Please re-submit your email."
+        );
       }
     );
   return false; // To block from loading a new page
 }
-
