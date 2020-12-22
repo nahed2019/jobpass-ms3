@@ -49,21 +49,20 @@
             <div class="row">
                 <div class="col-md-6">
                     <!-- cancel button -->
-                    <a href="{{ url_for('manage_profile', username=session['user'])}}" class="btn-large btn-block text-center pt-3">
+                    <a href="{{ url_for('manage_profile', username=session['user'])}}"
+                        class="btn-large btn-block text-center pt-3">
                         Cancel <i class="fas fa-times-circle right"></i>
                     </a>
                 </div>
                 <div class="col-md-6">
-                <button type="submit" class="btn-large btn-block">
-                    Edit Your Project Information
-                    <i class="fas fa-edit right"></i>
-                </button>
+                    <button type="submit" class="btn-large btn-block">
+                        Edit Your Project Information
+                        <i class="fas fa-edit right"></i>
+                    </button>
+                </div>
             </div>
+        </form>
     </div>
-
-    </form>
 </div>
-</div>
-
 
 {% endblock %}

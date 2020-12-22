@@ -3,76 +3,59 @@
 <h2 class="text-center p-5 h2-custom">Log In</h2>
 
 <div class="justify-content-center card col-md-8 offset-md-2 custom-card">
-  <div class="card-body">
-    <form class="card-text" method="POST" action="{{ url_for('login') }}">
-      <div class="form-group">
-        <!-- username -->
-        <div class="row align-items-center">
-          <div class="col-12 pt-3">
-            <label class="sr-only" for="username">Username</label>
-            <div class="input-group mb-4">
-              <div class="input-group-prepend">
-                <div class="input-group-text icon-color">
-                  <i class="fas fa-user-cog"></i>
+    <div class="card-body">
+        <form class="card-text" method="POST" action="{{ url_for('login') }}">
+            <div class="form-group">
+                <!-- username -->
+                <div class="row align-items-center">
+                    <div class="col-12 pt-3">
+                        <label class="sr-only" for="username">Username</label>
+                        <div class="input-group mb-4">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text icon-color">
+                                    <i class="fas fa-user-cog"></i>
+                                </div>
+                            </div>
+                            <input class="form-control form-control-lg validate" placeholder="Username" id="username"
+                                name="username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" type="text"
+                                required />
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <input
-                class="form-control form-control-lg validate"
-                placeholder="Username"
-                id="username"
-                name="username"
-                minlength="5"
-                maxlength="15"
-                pattern="^[a-zA-Z0-9]{5,15}$"
-                type="text"
-                required
-              />
-            </div>
-          </div>
-        </div>
-        <!-- passowrd -->
-        <div class="row align-items-center">
-          <div class="col-12 pt-3">
-            <label class="sr-only" for="password">Password</label>
-            <div class="input-group mb-4">
-              <div class="input-group-prepend">
-                <div class="input-group-text icon-color">
-                  <i class="fas fa-user-lock"></i>
+                <!-- passowrd -->
+                <div class="row align-items-center">
+                    <div class="col-12 pt-3">
+                        <label class="sr-only" for="password">Password</label>
+                        <div class="input-group mb-4">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text icon-color">
+                                    <i class="fas fa-user-lock"></i>
+                                </div>
+                            </div>
+                            <input class="form-control form-control-lg validate" placeholder="Password" id="password"
+                                name="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
+                                type="password" required />
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <input
-                class="form-control form-control-lg validate"
-                placeholder="Password"
-                id="password"
-                name="password"
-                minlength="5"
-                maxlength="15"
-                pattern="^[a-zA-Z0-9]{5,15}$"
-                type="password"
-                required
-              />
+                <!-- login -->
+                <div class="row pt-3">
+                    <button type="submit" class="col-12 btn-large">
+                        Log In <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <!-- login -->
-        <div class="row pt-3">
-          <button type="submit" class="col-12 btn-large">
-            Log In <i class="fas fa-sign-in-alt"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
+        </form>
+    </div>
 </div>
 
 <div class="row">
-  <div class="col pt-4 ">
-    <p class="text-center ">
-      New Here?
-      <a href="{{ url_for('register') }}" class="custom-link">Register Account</a>
-    </p>
-  </div>
+    <div class="col pt-4 ">
+        <p class="text-center ">
+            New Here?
+            <a href="{{ url_for('register') }}" class="custom-link">Register Account</a>
+        </p>
+    </div>
 </div>
 
 {% endblock %}

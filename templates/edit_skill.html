@@ -8,60 +8,47 @@
             <div class="row">
                 <!--skill name -->
                 <div class="input-group col-12 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-bolt"></i>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text icon-color">
+                            <i class="fas fa-bolt"></i>
+                        </div>
                     </div>
-                  </div>
-                  <input
-                    class="form-control form-control-lg validate"
-                    value="{{ skill.skill_name }}"
-                    id="skill_name"
-                    name="skill_name"
-                    type="text"
-                    required
-                  />
+                    <input class="form-control form-control-lg validate" value="{{ skill.skill_name }}" id="skill_name"
+                        name="skill_name" type="text" required />
                 </div>
-              </div>
+            </div>
 
-              <!-- percent -->
-              <div class="row">
+            <!-- percent -->
+            <div class="row">
                 <div class="input-group col-12 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-percent"></i>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text icon-color">
+                            <i class="fas fa-percent"></i>
+                        </div>
                     </div>
-                  </div>
-                  <input
-                    class="form-control form-control-lg validate"
-                    value="{{ skill.percent }}"
-                    id="percent"
-                    name="percent"
-                    type="number"
-                    
-                  />
+                    <input class="form-control form-control-lg validate" value="{{ skill.percent }}" id="percent"
+                        name="percent" type="number" />
                 </div>
-              </div>
+            </div>
 
             <!-- submit button -->
             <div class="row">
                 <div class="col-md-6">
                     <!-- cancel button -->
-                    <a href="{{ url_for('manage_profile', username=session['user'])}}" class="btn-large btn-block text-center pt-3">
+                    <a href="{{ url_for('manage_profile', username=session['user'])}}"
+                        class="btn-large btn-block text-center pt-3">
                         Cancel <i class="fas fa-times-circle right"></i>
                     </a>
                 </div>
                 <div class="col-md-6">
-                <button type="submit" class="btn-large btn-block">
-                    Edit Your skill Information
-                    <i class="fas fa-edit right"></i>
-                </button>
+                    <button type="submit" class="btn-large btn-block">
+                        Edit Your skill Information
+                        <i class="fas fa-edit right"></i>
+                    </button>
+                </div>
             </div>
+        </form>
     </div>
-
-    </form>
 </div>
-</div>
-
 
 {% endblock %}

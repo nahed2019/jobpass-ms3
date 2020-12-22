@@ -4,595 +4,394 @@
 and edited to fit project needs *-->
 
 <div class="container py-5 align-items-center">
-  <!-- profile header-->
-  <header class="text-center mb-2 pb-5">
-    <h1 class="display-4">Add Your Profile</h1>
-  </header>
+    <!-- profile header-->
+    <header class="text-center mb-2 py-5">
+        <h1 class="uppercase">Add Your Profile</h1>
+    </header>
 
-  <!-- profile information-->
-  <div class="row">
-    <div class="col-md-4">
-      <!-- Tabs profile information -->
-      <div
-        class="nav flex-column nav-pills nav-pills-custom"
-        id="v-pills-tab"
-        role="tablist"
-        aria-orientation="vertical"
-      >
-        <a
-          class="nav-link mb-3 p-3 shadow active"
-          id="v-pills-basics-tab"
-          data-toggle="pill"
-          href="#v-pills-basics"
-          role="tab"
-          aria-controls="v-pills-basics"
-          aria-selected="true"
-        >
-          <span class="font-weight-bold small text-uppercase"
-            >Add Your Basic Information</span
-          ></a
-        >
+    <!-- profile information-->
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Tabs profile information -->
+            <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist"
+                aria-orientation="vertical">
+                <a class="nav-link mb-3 p-3 shadow active" id="v-pills-basics-tab" data-toggle="pill"
+                    href="#v-pills-basics" role="tab" aria-controls="v-pills-basics" aria-selected="true">
+                    <span class="font-weight-bold small text-uppercase">Add Your Basic Information</span></a>
 
-        <a
-          class="nav-link mb-3 p-3 shadow"
-          id="v-pills-projects-tab"
-          data-toggle="pill"
-          href="#v-pills-projects"
-          role="tab"
-          aria-controls="v-pills-projects"
-          aria-selected="false"
-        >
-          <span class="font-weight-bold small text-uppercase"
-            >Add Your Projects Information</span
-          ></a
-        >
+                <a class="nav-link mb-3 p-3 shadow" id="v-pills-projects-tab" data-toggle="pill"
+                    href="#v-pills-projects" role="tab" aria-controls="v-pills-projects" aria-selected="false">
+                    <span class="font-weight-bold small text-uppercase">Add Your Projects Information</span></a>
 
-        <a
-          class="nav-link mb-3 p-3 shadow"
-          id="v-pills-Works-tab"
-          data-toggle="pill"
-          href="#v-pills-Works"
-          role="tab"
-          aria-controls="v-pills-Works"
-          aria-selected="false"
-        >
-          <span class="font-weight-bold small text-uppercase"
-            >Add Your Work Experience</span
-          ></a
-        >
+                <a class="nav-link mb-3 p-3 shadow" id="v-pills-Works-tab" data-toggle="pill" href="#v-pills-Works"
+                    role="tab" aria-controls="v-pills-Works" aria-selected="false">
+                    <span class="font-weight-bold small text-uppercase">Add Your Work Experience</span></a>
 
-        <a
-          class="nav-link mb-3 p-3 shadow"
-          id="v-pills-skills-tab"
-          data-toggle="pill"
-          href="#v-pills-skills"
-          role="tab"
-          aria-controls="v-pills-skills"
-          aria-selected="false"
-        >
-          <span class="font-weight-bold small text-uppercase"
-            >Add Your Skills Information</span
-          ></a
-        >
+                <a class="nav-link mb-3 p-3 shadow" id="v-pills-skills-tab" data-toggle="pill" href="#v-pills-skills"
+                    role="tab" aria-controls="v-pills-skills" aria-selected="false">
+                    <span class="font-weight-bold small text-uppercase">Add Your Skills Information</span></a>
 
-        <a
-          class="nav-link mb-3 p-3 shadow"
-          id="v-pills-languages-tab"
-          data-toggle="pill"
-          href="#v-pills-languages"
-          role="tab"
-          aria-controls="v-pills-languages"
-          aria-selected="false"
-        >
-          <span class="font-weight-bold small text-uppercase"
-            >Add Your Languages Information</span
-          ></a
-        >
-      </div>
+                <a class="nav-link mb-3 p-3 shadow" id="v-pills-languages-tab" data-toggle="pill"
+                    href="#v-pills-languages" role="tab" aria-controls="v-pills-languages" aria-selected="false">
+                    <span class="font-weight-bold small text-uppercase">Add Your Languages Information</span></a>
+            </div>
+        </div>
+
+        <div class="col-md-8 align-items-center">
+            <div class="tab-content" id="v-pills-tabContent">
+                <!-- Tabs content/ Basic information -->
+                <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-basics" role="tabpanel"
+                    aria-labelledby="v-pills-basics-tab">
+                    <h4 class="font-italic mb-4">Basic information</h4>
+                    <p class="font-italic text-muted mb-2">
+                        Please fill up the form below with your information
+                    </p>
+                    <div class="row">
+                        <form method="POST" action="{{url_for('basic_info')}}">
+                            <div class="row">
+                                <!--first name -->
+                                <div class="input-group col-md-6 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fas fa-user-circle"></i>
+                                        </div>
+                                    </div>
+                                    <input class="form-control form-control-lg validate" placeholder="First Name"
+                                        id="first_name" name="first_name" type="text" required />
+                                </div>
+                                <!--last name -->
+                                <div class="input-group col-md-6 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fas fa-user-circle"></i>
+                                        </div>
+                                    </div>
+                                    <input class="form-control form-control-lg validate" placeholder="last Name"
+                                        id="last_name" name="last_name" type="text" required />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- phone -->
+                                <div class="input-group col-md-6 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fas fa-phone"></i>
+                                        </div>
+                                    </div>
+                                    <input class="form-control form-control-lg validate" placeholder="Phone" id="phone"
+                                        name="phone" type="number" required />
+                                </div>
+
+                                <!--email -->
+                                <div class="input-group col-md-6 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                    </div>
+                                    <input class="form-control form-control-lg validate" placeholder="Email" id="email"
+                                        name="email" type="text" required />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- cur_title -->
+                                <div class="input-group col-md-6 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fab fa-black-tie"></i>
+                                        </div>
+                                    </div>
+                                    <input class="form-control form-control-lg validate" placeholder="Curent Job"
+                                        id="cur_title" name="cur_title" type="text" required />
+                                </div>
+
+                                <!--Education -->
+                                <div class="input-group col-md-6 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fas fa-graduation-cap"></i>
+                                        </div>
+                                    </div>
+                                    <input class="form-control form-control-lg validate" placeholder="Education"
+                                        id="education" name="education" type="text" required />
+                                </div>
+                            </div>
+
+                            <!-- Adress -->
+                            <div class="row">
+                                <div class="input-group col-12 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                    </div>
+                                    <input class="form-control form-control-lg validate" placeholder="Adress"
+                                        id="adress" name="adress" type="text" required />
+                                </div>
+                            </div>
+                            <!-- About Me -->
+                            <div class="row">
+                                <div class="input-group col-12 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fas fa-align-left"></i>
+                                        </div>
+                                    </div>
+                                    <textarea class="form-control form-control-lg validate" placeholder="About Me"
+                                        id="about_me" name="about_me" minlength="5" maxlength="200" required></textarea>
+                                </div>
+                            </div>
+                            <!-- submit button -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="submit" class="btn-large btn-block">
+                                        Add Your Basic Information
+                                        <i class="fas fa-plus-square right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Tabs content/ projects information -->
+                <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-projects" role="tabpanel"
+                    aria-labelledby="v-pills-projects-tab">
+                    <h4 class="font-italic mb-4">Projects Information</h4>
+                    <p class="font-italic text-muted mb-2">
+                        Please fill up the form below with the information of your projects.
+                    </p>
+                    <div class="row">
+                        <form method="POST" action="{{url_for('add_project')}}" style="width: 100%">
+                            <div class="row">
+                                <!--project name -->
+                                <div class="input-group col-12 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fas fa-project-diagram"></i>
+                                        </div>
+                                    </div>
+                                    <input class="form-control form-control-lg validate" placeholder="Project Name"
+                                        id="project_name" name="project_name" type="text" required />
+                                </div>
+                            </div>
+
+                            <!-- Project Link -->
+                            <div class="row">
+                                <div class="input-group col-12 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fas fa-globe"></i>
+                                        </div>
+                                    </div>
+                                    <input class="form-control form-control-lg validate" placeholder="Project Link"
+                                        id="project_link" name="project_link" type="text" required />
+                                </div>
+                            </div>
+
+                            <!-- Project Description -->
+                            <div class="row">
+                                <div class="input-group col-12 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fas fa-align-left"></i>
+                                        </div>
+                                    </div>
+                                    <textarea class="form-control form-control-lg validate"
+                                        placeholder="Project Description" id="project_desc" name="project_desc"
+                                        minlength="5" maxlength="200" required></textarea>
+                                </div>
+                            </div>
+
+                            <!-- submit button -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="submit" class="btn-large btn-block">
+                                        Add Your Project Information
+                                        <i class="fas fa-plus-square right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Tabs content/ experience information -->
+                <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-Works" role="tabpanel"
+                    aria-labelledby="v-pills-Works-tab">
+                    <h4 class="font-italic mb-4">Work Experience</h4>
+                    <p class="font-italic text-muted mb-2">
+                        Please add your Work Experience here.
+                    </p>
+                    <div class="row">
+                        <form method="POST" action="{{url_for('work_experience')}}" style="width: 100%">
+                            <div class="row">
+                                <!--job name -->
+                                <div class="input-group col-12 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fas fa-hard-hat"></i>
+                                        </div>
+                                    </div>
+                                    <input class="form-control form-control-lg validate" placeholder="Job Name"
+                                        id="job_title" name="job_title" type="text" required />
+                                </div>
+                            </div>
+
+                            <!-- company  -->
+                            <div class="row">
+                                <div class="input-group col-12 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fas fa-building"></i>
+                                        </div>
+                                    </div>
+                                    <input class="form-control form-control-lg validate" placeholder="Company Name"
+                                        id="company_name" name="company_name" type="text" required />
+                                </div>
+                            </div>
+
+                            <!-- from/to date -->
+                            <div class="row">
+                                <div class="input-group col-6 mb-4 ">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            From
+                                        </div>
+                                    </div>
+                                    <input type="date" 
+                                        class="form-control form-control-lg validate" id="from_date" name="from_date"
+                                        required />
+                                </div>
+                                <div class="input-group col-6 mb-4 ">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            To
+                                        </div>
+                                    </div>
+                                    <input type="date"
+                                        class="form-control form-control-lg validate" id="to_date" name="to_date"
+                                        required />
+                                </div>
+                            </div>
+
+                            <!-- submit button -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="submit" class="btn-large btn-block">
+                                        Add Your Work Experience
+                                        <i class="fas fa-plus-square right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Tabs content/ skills information -->
+                <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-skills" role="tabpanel"
+                    aria-labelledby="v-pills-skills-tab">
+                    <h4 class="font-italic mb-4">Skills information</h4>
+                    <p class="font-italic text-muted mb-2">
+                        Please add your Skills here.
+                    </p>
+                    <div class="row">
+                        <form method="POST" action="{{url_for('skills')}}" style="width: 100%">
+                            <div class="row">
+                                <!--skill name -->
+                                <div class="input-group col-12 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fas fa-bolt"></i>
+                                        </div>
+                                    </div>
+                                    <input class="form-control form-control-lg validate" placeholder="Skill Name"
+                                        id="skill_name" name="skill_name" type="text" required />
+                                </div>
+                            </div>
+
+                            <!-- percent -->
+                            <div class="row">
+                                <div class="input-group col-12 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fas fa-percent"></i>
+                                        </div>
+                                    </div>
+                                    <input class="form-control form-control-lg validate" placeholder="Skill percent"
+                                        id="percent" name="percent" type="number" required />
+                                </div>
+                            </div>
+
+                            <!-- submit button -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="submit" class="btn-large btn-block">
+                                        Add Your Skill Information
+                                        <i class="fas fa-plus-square right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Tabs content/ languages information -->
+                <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-languages" role="tabpanel"
+                    aria-labelledby="v-pills-languages-tab">
+                    <h4 class="font-italic mb-4">Languages information</h4>
+                    <p class="font-italic text-muted mb-2">
+                        Please add your Languages here.
+                    </p>
+                    <div class="row">
+                        <form method="POST" action="{{url_for('languages')}}" style="width: 100%">
+                            <div class="row">
+                                <!--language name -->
+                                <div class="input-group col-12 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fas fa-language"></i>
+                                        </div>
+                                    </div>
+                                    <input class="form-control form-control-lg validate" placeholder="Language Name"
+                                        id="language_name" name="language_name" type="text" required />
+                                </div>
+                            </div>
+
+                            <!-- language_level -->
+                            <div class="row">
+                                <div class="input-group col-12 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text icon-color">
+                                            <i class="fas fa-percent"></i>
+                                        </div>
+                                    </div>
+                                    <select class="custom-select custom-select-lg validate" id="language_level"
+                                        name="language_level" required>
+                                        <option selected value="" disabled>Select Level</option>
+                                        <option value="Mother Tongue">Mother Tongue</option>
+                                        <option value="B1">B1</option>
+                                        <option value="B2">B2</option>
+                                        <option value="C1">C1</option>
+                                        <option value="D1">D1</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- submit button -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="submit" class="btn-large btn-block">
+                                        Add Your Skill Information
+                                        <i class="fas fa-plus-square right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="col-md-8 align-items-center">
-      <div class="tab-content" id="v-pills-tabContent">
-        <!-- Tabs content/ Basic information -->
-        <div
-          class="tab-pane fade shadow rounded bg-white show active p-5"
-          id="v-pills-basics"
-          role="tabpanel"
-          aria-labelledby="v-pills-basics-tab"
-        >
-          <h4 class="font-italic mb-4">Basic information</h4>
-          <p class="font-italic text-muted mb-2">
-            Please fill up the form below with your information
-          </p>
-          <div class="row">
-            <form method="POST" action="{{url_for('basic_info')}}">
-              <div class="row">
-                <!--first name -->
-                <div class="input-group col-md-6 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-user-circle"></i>
-                    </div>
-                  </div>
-                  <input
-                    class="form-control form-control-lg validate"
-                    placeholder="First Name"
-                    id="first_name"
-                    name="first_name"
-                    type="text"
-                    required
-                  />
-                </div>
-                <!--last name -->
-                <div class="input-group col-md-6 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-user-circle"></i>
-                    </div>
-                  </div>
-                  <input
-                    class="form-control form-control-lg validate"
-                    placeholder="last Name"
-                    id="last_name"
-                    name="last_name"
-                    type="text"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div class="row">
-                <!-- phone -->
-                <div class="input-group col-md-6 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-phone"></i>
-                    </div>
-                  </div>
-                  <input
-                    class="form-control form-control-lg validate"
-                    placeholder="Phone"
-                    id="phone"
-                    name="phone"
-                    type="number"
-                    required
-                  />
-                </div>
-
-                <!--email -->
-                <div class="input-group col-md-6 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-envelope"></i>
-                    </div>
-                  </div>
-                  <input
-                    class="form-control form-control-lg validate"
-                    placeholder="Email"
-                    id="email"
-                    name="email"
-                    type="text"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div class="row">
-                <!-- cur_title -->
-                <div class="input-group col-md-6 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fab fa-black-tie"></i>
-                    </div>
-                  </div>
-                  <input
-                    class="form-control form-control-lg validate"
-                    placeholder="Curent Job"
-                    id="cur_title"
-                    name="cur_title"
-                    type="text"
-                    required
-                  />
-                </div>
-
-                <!--Education -->
-                <div class="input-group col-md-6 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-graduation-cap"></i>
-                    </div>
-                  </div>
-                  <input
-                    class="form-control form-control-lg validate"
-                    placeholder="Education"
-                    id="education"
-                    name="education"
-                    type="text"
-                    required
-                  />
-                </div>
-              </div>
-
-              <!-- Adress -->
-              <div class="row">
-                <div class="input-group col-12 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                  </div>
-                  <input
-                    class="form-control form-control-lg validate"
-                    placeholder="Adress"
-                    id="adress"
-                    name="adress"
-                    type="text"
-                    required
-                  />
-                </div>
-              </div>
-              <!-- About Me -->
-              <div class="row">
-                <div class="input-group col-12 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-align-left"></i>
-                    </div>
-                  </div>
-                  <textarea
-                    class="form-control form-control-lg validate"
-                    placeholder="About Me"
-                    id="about_me"
-                    name="about_me"
-                    minlength="5"
-                    maxlength="200"
-                    required
-                  ></textarea>
-                </div>
-              </div>
-              <!-- submit button -->
-              <div class="row">
-                <div class="col-12">
-                  <button type="submit" class="btn-large btn-block">
-                    Add Your Basic Information
-                    <i class="fas fa-plus-square right"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        <!-- Tabs content/ projects information -->
-        <div
-          class="tab-pane fade shadow rounded bg-white p-5"
-          id="v-pills-projects"
-          role="tabpanel"
-          aria-labelledby="v-pills-projects-tab"
-        >
-          <h4 class="font-italic mb-4">Projects Information</h4>
-          <p class="font-italic text-muted mb-2">
-            Please fill up the form below with the information of your projects.
-          </p>
-          <div class="row">
-            <form
-              method="POST"
-              action="{{url_for('add_project')}}"
-              style="width: 100%"
-            >
-              <div class="row">
-                <!--project name -->
-                <div class="input-group col-12 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-project-diagram"></i>
-                    </div>
-                  </div>
-                  <input
-                    class="form-control form-control-lg validate"
-                    placeholder="Project Name"
-                    id="project_name"
-                    name="project_name"
-                    type="text"
-                    required
-                  />
-                </div>
-              </div>
-
-              <!-- Project Link -->
-              <div class="row">
-                <div class="input-group col-12 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-globe"></i>
-                    </div>
-                  </div>
-                  <input
-                    class="form-control form-control-lg validate"
-                    placeholder="Project Link"
-                    id="project_link"
-                    name="project_link"
-                    type="text"
-                    required
-                  />
-                </div>
-              </div>
-
-              <!-- Project Description -->
-              <div class="row">
-                <div class="input-group col-12 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-align-left"></i>
-                    </div>
-                  </div>
-                  <textarea
-                    class="form-control form-control-lg validate"
-                    placeholder="Project Description"
-                    id="project_desc"
-                    name="project_desc"
-                    minlength="5"
-                    maxlength="200"
-                    required
-                  ></textarea>
-                </div>
-              </div>
-
-              <!-- submit button -->
-              <div class="row">
-                <div class="col-12">
-                  <button type="submit" class="btn-large btn-block">
-                    Add Your Project Information
-                    <i class="fas fa-plus-square right"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        <!-- Tabs content/ experience information -->
-        <div
-          class="tab-pane fade shadow rounded bg-white p-5"
-          id="v-pills-Works"
-          role="tabpanel"
-          aria-labelledby="v-pills-Works-tab"
-        >
-          <h4 class="font-italic mb-4">Work Experience</h4>
-          <p class="font-italic text-muted mb-2">
-            Please add your Work Experience here.
-          </p>
-          <div class="row">
-            <form
-              method="POST"
-              action="{{url_for('work_experience')}}"
-              style="width: 100%"
-            >
-              <div class="row">
-                <!--job name -->
-                <div class="input-group col-12 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-hard-hat"></i>
-                    </div>
-                  </div>
-                  <input
-                    class="form-control form-control-lg validate"
-                    placeholder="Job Name"
-                    id="job_title"
-                    name="job_title"
-                    type="text"
-                    required
-                  />
-                </div>
-              </div>
-
-              <!-- company  -->
-              <div class="row">
-                <div class="input-group col-12 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-building"></i>
-                    </div>
-                  </div>
-                  <input
-                    class="form-control form-control-lg validate"
-                    placeholder="Company Name"
-                    id="company_name"
-                    name="company_name"
-                    type="text"
-                    required
-                  />
-                </div>
-              </div>
-
-              <!-- from/to date -->
-              <div class="row">
-                <div class="input-group col-6 mb-4 datepicker date">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-calendar"></i>
-                    </div>
-                  </div>
-                  <input
-                    type="date"
-                    placeholder="Choose a start date"
-                    class="form-control form-control-lg validate"
-                    id="from_date"
-                    name="from_date"
-                    required
-                  />
-                </div>
-                <div class="input-group col-6 mb-4 datepicker date">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-calendar"></i>
-                    </div>
-                  </div>
-                  <input
-                    type="date"
-                    placeholder="Choose end date"
-                    class="form-control form-control-lg validate"
-                    id="to_date"
-                    name="to_date"
-                    required
-                  />
-                </div>
-              </div>
-
-              <!-- submit button -->
-              <div class="row">
-                <div class="col-12">
-                  <button type="submit" class="btn-large btn-block">
-                    Add Your Work Experience
-                    <i class="fas fa-plus-square right"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        <!-- Tabs content/ skills information -->
-        <div
-          class="tab-pane fade shadow rounded bg-white p-5"
-          id="v-pills-skills"
-          role="tabpanel"
-          aria-labelledby="v-pills-skills-tab"
-        >
-          <h4 class="font-italic mb-4">Skills information</h4>
-          <p class="font-italic text-muted mb-2">
-            Please add your Skills here.
-          </p>
-          <div class="row">
-            <form
-              method="POST"
-              action="{{url_for('skills')}}"
-              style="width: 100%"
-            >
-              <div class="row">
-                <!--skill name -->
-                <div class="input-group col-12 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-bolt"></i>
-                    </div>
-                  </div>
-                  <input
-                    class="form-control form-control-lg validate"
-                    placeholder="Skill Name"
-                    id="skill_name"
-                    name="skill_name"
-                    type="text"
-                    required
-                  />
-                </div>
-              </div>
-
-              <!-- percent -->
-              <div class="row">
-                <div class="input-group col-12 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-percent"></i>
-                    </div>
-                  </div>
-                  <input
-                    class="form-control form-control-lg validate"
-                    placeholder="Skill percent"
-                    id="percent"
-                    name="percent"
-                    type="number"
-                    required
-                  />
-                </div>
-              </div>
-
-              <!-- submit button -->
-              <div class="row">
-                <div class="col-12">
-                  <button type="submit" class="btn-large btn-block">
-                    Add Your Skill Information
-                    <i class="fas fa-plus-square right"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <!-- Tabs content/ languages information -->
-        <div
-          class="tab-pane fade shadow rounded bg-white p-5"
-          id="v-pills-languages"
-          role="tabpanel"
-          aria-labelledby="v-pills-languages-tab"
-        >
-          <h4 class="font-italic mb-4">Languages information</h4>
-          <p class="font-italic text-muted mb-2">
-            Please add your Languages here.
-          </p>
-          <div class="row">
-            <form
-              method="POST"
-              action="{{url_for('languages')}}"
-              style="width: 100%"
-            >
-              <div class="row">
-                <!--language name -->
-                <div class="input-group col-12 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-language"></i>
-                    </div>
-                  </div>
-                  <input
-                    class="form-control form-control-lg validate"
-                    placeholder="Language Name"
-                    id="language_name"
-                    name="language_name"
-                    type="text"
-                    required
-                  />
-                </div>
-              </div>
-
-              <!-- percent -->
-              <div class="row">
-                <div class="input-group col-12 mb-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text icon-color">
-                      <i class="fas fa-percent"></i>
-                    </div>
-                  </div>
-                  <select
-                    class="custom-select custom-select-lg validate"
-                    id="language_level"
-                    name="language_level"
-                    required
-                  >
-                    <option selected value="" disabled>Select Level</option>
-                    <option value="Mother Tongue">Mother Tongue</option>
-                    <option value="B1">B1</option>
-                    <option value="B2">B2</option>
-                    <option value="C1">C1</option>
-                    <option value="D1">D1</option>
-                  </select>
-                </div>
-              </div>
-
-              <!-- submit button -->
-              <div class="row">
-                <div class="col-12">
-                  <button type="submit" class="btn-large btn-block">
-                    Add Your Skill Information
-                    <i class="fas fa-plus-square right"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
 {% endblock %}

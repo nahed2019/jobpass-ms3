@@ -8,7 +8,7 @@
 
 ## Introduction
 
-Jobpass was created by Nahed Alsayed, as a portfolio to include all created projects as well as to serve all users to create their own portfolios.
+Jobpass was created by Nahed Alsayed Ahmad, as a portfolio to include all created projects as well as to serve all users to create their own portfolios.
 I know how important it’s to have a place where you can create your own portfolio by adding your Personal information, Work Experience, skills, and Projects to help everyone have better job opportunities.
 The website is fully responsive, has a consistent flow and intuitive navigation.
 
@@ -23,7 +23,7 @@ The website is fully responsive, has a consistent flow and intuitive navigation.
     - [Existing Features](#existing-features)
         - [In all pages](#in-all-pages)
         - [My profile Page](#profile-page)
-        - [Profile Shop Page](#Shop-page)
+        - [Portfolios Page](#Portfolios-page)
         - [New Profile Page](#add-profile-page)
         - [Manage Profile Page](#create-account-page)
         - [Register Page](#register-page)
@@ -38,7 +38,7 @@ The website is fully responsive, has a consistent flow and intuitive navigation.
     - [Data Storage Types](#data-storage-types)
     - [Collections Data Structure](#collections-data-structure)
         - [Users Collection](#users-collection)
-        - [Activities Collection](#activities-collection)
+        - [ Collection](#collection)
 
 
 4. [Technologies Used](#technologies-used)
@@ -105,22 +105,22 @@ Visitor Goals:
 
  ## Design
 
-    #### Colour Scheme
+ #### Colour Scheme
           The main colors used are: #4a6274 , #f3a7a7
           The body background : linear-gradient(to left, #4a6274, #d9e5ee)
             
-     #### Typography
+#### Typography
         -   The "Roboto" font is the main fonts used throughout the whole website with "font-italic" class for some paragraph .
         - Sans Serif as the fallback font in case for any reason the font is not being imported into the site correctly.
     
-    #### Imagery
-        -   Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
 
 ## Wireframes
 
-    1. All Wireframes are created by using [Balsamiq](https://balsamiq.com/).
-    2. Tablet and Desktop wireframes have the same view. 
-    3. [Wireframes](https://github.com/nahed2019/jobpass-ms3/tree/master/static/wireframes)
+1. All Wireframes are created by using [Balsamiq](https://balsamiq.com/).
+2. Tablet and Desktop wireframes have the same view. 
+3. [Wireframes](https://github.com/nahed2019/jobpass-ms3/tree/master/static/wireframes)
+4. As the wireframes were designed at the beginning of the project, the layout of some of the pages has been changed without impact the content of those pages.
+5. The name of profile shop page changed to Portfolios page.
 
 # Features
  
@@ -132,13 +132,13 @@ Visitor Goals:
         For visitors to the site who are not logged in/Registered
         list items links are available for them to use:
         1. My profile
-        2. Profile Shop
+        2. Portfolios 
         3. Log in 
         4. Register
        
       For users who are logged in/Registered: 
         1. My profile
-        2. Profile Shop
+        2. Portfolios
         3. New Profile
         4. Manage Profile
         5. Log out
@@ -168,7 +168,7 @@ Visitor Goals:
 - You will be able to see a contact form with some details to be filled if you wish to get in touch with me. Upon filling the form and click on send, email will be sent to me with your details
 
 
-### Profile Shop Page
+### Portfolios Page
 - Business cards for all users who successfully registered and created their own profiles. Business card will include below details:
     Current work
     Phone Number
@@ -177,6 +177,7 @@ Visitor Goals:
     Address
 - A search bar where you can search with Current Work, Education, or Address to find the business cards of any job seeker
 - In the Search bar, you will find a Reset button to reset the search results
+
 
 
 ### New Profile Page
@@ -190,14 +191,14 @@ Visitor Goals:
 - Upon saving, you will get a flash massage that Information is Successfully updated
 
 ### Manage Profile Page
-- Upon successful login with your username and password, it will direct you to the Logged In page where you can find your Profile data if you add it in New profile page correctly:
-    You Name
-    Current Work
-    Three mini tabs, About, Projects & Work Experience, and Skills
-    About Me includes Cards with Personal Information, Languages, Address, Phone Number, and Email Address
-    Projects & Work Experience includes all your projects and work experience
-    Skills List includes all your added skills with the level of each skill
-- An option to edit or delete any of Projects & Work Experience and Skills is there, it opens new page for edit information with information retrieved from MongoDB, based on the -ID. These fields can be altered to update an existing information.
+- Upon successful login with your username and password, it will direct you to the Logged In page where you can find your Profile data if you add it in New profile page correctly and you will fimd your portfolio:
+    1. Your Name
+    2. Current Work
+    3. Three mini tabs, About, Projects & Work Experience, and Skills
+    4. About Me includes Cards with Personal Information, Languages, Address, Phone Number, and Email Address
+    5. Projects & Work Experience includes all your projects and work experience
+    6. Skills List includes all your added skills with the level of each skill
+- An option to edit or delete any of Projects & Work Experience and Skills is there as an Icon, it opens new page for edit information with information retrieved from MongoDB, based on the -ID. These fields can be altered to update an existing information.
 
 ### log In Page
 - The log in page also features a simple **form** where the user can enter username, password and a login button.
@@ -210,6 +211,8 @@ The Register page also features a simple **form** where the user can enter usern
 
 ## Features Left to Implement
 
+1. Link the business cards on the Portfolios page to each user's profile page or to his CV.
+2. Create a form for each business card on the Portfolios page in which the recruiters can communicate directly with the job seeker of certain profile.
 
 # Information Architecture
 ### Database Choice
@@ -227,68 +230,68 @@ The Register page also features a simple **form** where the user can enter usern
 ### Collections Data Structure
 
 The JobPass website relies on 6 database collections:
-[Example JSON from the collections](data/schemas/example.json)
+[Example JSON from the MongoDB collections](data/schemas/example.json)
 
 #### Users Collection
 
 | Title | Key in db | Data type |
---- | --- | --- | --- 
-Account ID | _id | None | ObjectId 
-Name | username  | string
-Password | password  | string
+|------ | --- ------| --- ------|  
+|Account ID | _id |  ObjectId| 
+|Name | username  | string |
+|Password | password  | string |
 
 #### basic_info Collection
 | Title | Key in db | Data type |
---- | --- | --- | --- 
-Account ID | _id | None | ObjectId 
-First Name | first_name  | string
-Last Name | last_name  | string
-Phone | phone  | string
-Email | email  | string
-Curent Job | cur_title  | string
-Education | education  | string
-Adress  | adress  | string
-About me | about_me  | string
-Created by | created_by  | string
+|--- | --- | --- |
+|Account ID | _id | ObjectId |
+|First Name | first_name  | string|
+|Last Name | last_name  | string|
+|Phone | phone  | string|
+|Email | email  | string|
+|Curent Job | cur_title  | string|
+|Education | education  | string|
+|Adress  | adress  | string|
+|About me | about_me  | string|
+|Created by | created_by  | string|
 
 #### projects Collection
 
 | Title | Key in db | Data type |
---- | --- | --- | --- 
-Account ID | _id | None | ObjectId 
-Project Name | project_name  | string
-Project Description| project_desc  | string
-Project link| project_link  | string
-Created by | created_by  | string
+|--- | --- | --- |
+|Account ID | _id | ObjectId |
+|Project Name | project_name  | string|
+|Project Description| project_desc  | string|
+|Project link| project_link  | string|
+|Created by | created_by  | string|
 
 #### skills Collection
 
 | Title | Key in db | Data type |
---- | --- | --- | --- 
-Account ID | _id | None | ObjectId 
-Skill Name | skill_name  | string
-Percent | percent  | Integer
-Created by | created_by  | string
+|--- | --- | --- |
+|Account ID | _id |  ObjectId |
+|Skill Name | skill_name  | string|
+|Percent | percent  | Integer|
+|Created by | created_by  | string|
 
 #### work_experience Collection
 
 | Title | Key in db | Data type |
---- | --- | --- | --- 
-Account ID | _id | None | ObjectId 
-Job Name | job_title  | string
-Company Nam | company_name  | string
-Start date | from_date  | string
-End date | to_date  | string
-Created by | created_by  | string
+|--- | --- | --- | 
+|Account ID | _id |  ObjectId |
+|Job Name | job_title  | string|
+|Company Nam | company_name  | string|
+|Start date | from_date  | string|
+|End date | to_date  | string|
+|Created by | created_by  | string|
 
 #### Languages Collection
 
 | Title | Key in db | Data type |
---- | --- | --- | --- 
-Account ID | _id | None | ObjectId 
-Language Name | language_name  | string
-Language Level | language_level  | string
-Created by | created_by  | string
+|--- | --- | --- | 
+|Account ID | _id | ObjectId |
+|Language Name | language_name  | string|
+|Language Level | language_level  | string|
+|Created by | created_by  | string|
 
 
 #### The types of data stored in local json files for this project are:
@@ -335,6 +338,7 @@ To test the CRUDs functionalities:
 - [PyMongo](https://api.mongodb.com/python/current/) to make communication between Python and MongoDB possible.
 - [Flask](https://flask.palletsprojects.com/en/1.0.x/) to construct and render pages.
 - [Jinja](http://jinja.pocoo.org/docs/2.10/) to simplify displaying data from the backend of this project smoothly and effectively in html.
+- Weasyprint : to convert the html page to pdf file
 
 
 ### Tools
@@ -369,6 +373,7 @@ To test the CRUDs functionalities:
 - The responsiveness of this website was tested constantly during the development process. It was tested in real desktops, tablets and mobile devices as well as on Google Chrome developer tools.
 - The website was tested on different browsers such as Google Chrome, Safari, Internet Explorer and Mozilla Firefox.
 - I asked friends and family members to test the functionalities of the website on desktop and mobile devices. Their feedback was used to improve website usability.
+- All links, buttons, forms, navbar and pages functionalities were tested regularly while working in the project.
 
 ### Testing User Stories from User Experience (UX) Section:
 The following section goes through each of the user stories from the UX section of User Stories:
@@ -376,13 +381,13 @@ The following section goes through each of the user stories from the UX section 
     - To easily find what I am looking for without being confused with what I need to click or where should I go:
     * Simple and clear Navbar added at the top of the screen.
     * The navbar shows the user appropriate links depending on if they are logged in or out.
-    * FQA added to the link in the footer to help the user.
+    * FAQ's added to the link in the footer to help the user.
     - To register and create my own credentials with a click of a button:
-    * The register page features a simple **form** where the user can enter username, password and a register button.
+    * The register page features a simple form where the user can enter username, password and a register button.
     - To easily manage my profile and update my existing Personal information, Work Experience, Projects, Skills, and Languages:
     *  An option to edit or delete any of Projects & Work Experience and Skills is there near each information , it opens new page for edit information with information retrieved from MongoDB, based on the -ID. These fields can be altered to update an existing information.
     - To be able to contact the developer/site owner whenever a support is needed:
-    * In contact section/My profile After filling all necessary information email is successfully send and a toast message is shown above the form confirming the email was sent.
+    * In contact section/My profile After filling all necessary information,an email is successfully send and a toast message is shown above the form confirming the email was sent.
     - To have an easy access to Contact Information, Phone Numbers, email addresses, and Social Media links
     * In the contact form and the footer of the page, you will find all information in clear and simple way.
     - To be able to access Jobpass from a mobile phone or tablet and to be easy to navigate and use on my smaller devices.
@@ -391,9 +396,9 @@ The following section goes through each of the user stories from the UX section 
 
 - As a recruiter, I expect/want/need:
     - To easily search for job seekers with the ability to contact them directly
-    * In shop profile/ search bar where you can search with Current Work, Education, or Address to find the business cards of any job seeker
+    * In Portfolios page/ search bar where you can search with Current Work, Education, or Address to find the business cards of any job seeker
     - To be able to contact the developer/site owner whenever a support is needed
-    * In the contact form and the footer of the page, you will find all information in clear and simple way.
+    * In the contact form and the footer of the page, you will find all information in a clear and simple way.
     - An easy access to the contact information, phone number and email for the people I am looking for.
     * Business cards for all users who successfully registered and created their own profiles. Business card will include below details:
         Current work
@@ -407,7 +412,26 @@ The following section goes through each of the user stories from the UX section 
     - To find the developer’s last projects with the ability to check them with a click of a button
     * In My Profile/ Project section, the user will find the projects I have worked on recently. It contains an image of the project in a desktop screen along with a brief description of the project and two buttons for the project's GitHub repository and the project's live website.
     - To easily get in touch with site developer or owner via contact form
-    * In the contact form and the footer of the page, you will find all information in clear and simple way.
+    * In the contact form and the footer of the page, you will find all information in a clear and simple way.
+
+
+### Bugs
+
+### Solved bugs
+
+1. The option of downloading the profile as PDF in Manage Profile Page was wrongly directing to Log In page.
+ Issue has fixed by creating a new function to get the needed data then call another function which convert the data to PDF. 
+ Credit: I got help from my mentor to fix this issue.
+
+2.  I got an error in my workspace terminal : "GET /favicon.ico HTTP/1.1" 404:
+Issue has fixed by adding <link rel="shortcut icon" href="#" /> to the header section.
+Credit: I got help from (https://stackoverflow.com/questions/39149846/why-am-i-seeing-a-404-not-found-error-failed-to-load-favicon-ico-when-not-usin)
+
+
+### Unsolved bugs
+
+- When we click on the downloading option/Manage profile page the PDF file is showing the layout of Manage Profile without showing any data. 
+Issue Not Fixed Yet. I’m still working on a solution to fix the issue
 
 # Deployment
 
@@ -415,7 +439,7 @@ The following section goes through each of the user stories from the UX section 
 
 To deploy JobPass to heroku, the following steps were taken:
 
-1. Created a `requirements.txt` file using the terminal command `pip3 freeze > requirements.txt`.
+1. Created a `requirements.txt` file using the terminal command `pip3 freeze -- local > requirements.txt`.
 
 2. Created a `Procfile` with the terminal command `echo web: python app.py > Procfile`.
 
@@ -491,21 +515,22 @@ Create a file called "env.py" and store your SECRET_KEY variable, your MONGO_URI
 
 
 ### Acknowledgements
-Credit: 
-- Code for floating buttons taken from this [W3Schools](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp) and edited to fit project needs.
+### Credit code: 
+
+- Code for add-edit-and-delete-buttons taken from https://bootstrapious.com/p/bootstrap-add-edit-and-delete-buttons and edited to fit project needs
 - code for carousel-container taken from https://bootstrapious.com/p/bootstrap-carousel-with-quotes and edited to fit project needs.
 - code for Progress Circle taken from https://bootstrapious.com/p/circular-progress-bar and edited to fit project needs.
 - code for vertical Tabs taken from https://bootstrapious.com/p/bootstrap-vertical-tabs
 and edited to fit project needs.
+- Code for floating buttons taken from this [W3Schools](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp) and edited to fit project needs.
 
 ## Disclaimer
 The content of this website is educational purposes only.
 
 ## Thank you
 
-- I would like to express my gratitude to the great efforts done by my Memtor.
-- Thanks for the Tutors which helped me in completing this level. All the classes and lessons were very valuable and had a great added value to my knowledge and future career.
+- Thanks to the Tutors for helping me in completing this level. All the classes and lessons were very valuable and had a great added value to my knowledge and future career.
+- Thank you *Igor Basuga* and *Tim Nelson* from Code Institute Tutor for your assistance.
+- I would like to express my gratitude to the great efforts done by my Mentor.
 - Thanks for all Student Care Advisers which supported the Students.
-- Thanks for Slack Community for their support.
-- Looking forward for the next project.
-
+- Thanks for my husband  who has always supported me.
