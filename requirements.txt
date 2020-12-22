@@ -1,7 +1,16 @@
+cairocffi==1.2.0
+CairoSVG==2.5.0
 click==7.1.2
+cssselect2==0.4.1
 dnspython==2.0.0
 Flask==1.1.2
 Flask-PyMongo==2.3.0
+html5lib==1.1
 itsdangerous==1.1.0
+pdfkit==0.6.1
+Pillow==8.0.1
 pymongo==3.11.1
+Pyphen==0.10.0
+tinycss2==1.1.0
+WeasyPrint==52.2
 Werkzeug==1.0.1
