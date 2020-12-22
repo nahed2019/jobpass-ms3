@@ -13,8 +13,8 @@
         "github_url":"https://github.com/nahed2019/My-Dream-Holiday.git"
     },
     {
-        "project_name": "JobBass",
-        "project_description": "this projects was created by me, Nahed Alsayed Ahmad, to be my portfolio with my latest projects and information about me and my skillset.",
+        "project_name": "JobPass",
+        "project_description": "this projects was created by me, Nahed Alsayed Ahmad, to be my portfolio with my latest projects and information about me and my skillset.I know how important it’s to have a place where you can create your own portfolio by adding your Personal information, Work Experience, skills, and Projects to help everyone have better job opportunities.",
         "project_image": "static/images/jobpass.jpg",
         "live_url": "https://flask-jobpass-project.herokuapp.com/profile",
         "github_url":"https://github.com/nahed2019/jobpass-ms3.git"
