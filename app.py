@@ -350,6 +350,12 @@ def delete_skill(skill_id):
         return redirect(url_for("manage_profile", username=username))
 
 
+# Route for search in portfolios page
+@app.route("/privacy")
+def privacy():
+    return render_template("privacy.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
