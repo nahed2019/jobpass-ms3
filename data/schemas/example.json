@@ -1,0 +1,49 @@
+[
+    {
+        "Colection Name": "Users",
+        "_id": "<objectId>",
+        "username": "<string>",
+        "password": "string"
+    },
+    {
+        "Colection Name": "basic_info",
+        "_id": "<objectId>",
+        "first_name": "<string>",
+        "last_name": "string",
+        "phone": "string",
+        "email": "string",
+        "cur_title": "string",
+        "education": "string",
+        "Adress": "string",
+        "about_me": "string"
+    },
+    {
+        "Colection Name": "projects",
+        "_id": "<objectId>",
+        "project_name": "<string>",
+        "project_desc": "string",
+        "project_link": "string"
+    },
+    {
+        "Colection Name": "skills",
+        "_id": "<objectId>",
+        "skill_name": "<string>",
+        "percent": "Integer"
+    },
+    {
+        "Colection Name": "work_experience",
+        "_id": "<objectId>",
+        "job_title": "<string>",
+        "company_name": "string",
+        "from_date": "string",
+        "to_date": "string"
+    },
+    {
+        "Colection Name": "Languages",
+        "_id": "<objectId>",
+        "language_name": "<string>",
+        "language_level": "Integer"
+    }
+    ]
+    
+    
