@@ -35,12 +35,11 @@
                         <a class="nav-link" href="{{ url_for('profile') }}">My Profile</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ url_for('shop') }}">Profile Shop</a>
+                        <a class="nav-link" href="{{ url_for('portfolios') }}">Portfolios</a>
                     </li>
                     {% if session.user %}
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ url_for('add_profile', username=session['user']) }}">New
-                            Profile</a>
+                        <a class="nav-link" href="{{ url_for('add_profile', username=session['user']) }}">New Profile</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ url_for('manage_profile', username=session['user']) }}">Manage
@@ -76,7 +75,7 @@
 
     <main class="container-fluid">{% block content %} {% endblock %}</main>
 
-    <footer class="container-fluid footer-container mt-5 align-content-center justify-content-center">
+    <footer class="container-fluid footer-container mt-5 justify-content-center">
         <div class="row pt-3 pl-3">
             <div class="col-md-6  ">
                 <h5 class="uppercase ">About Project</h5>
@@ -92,7 +91,7 @@
                 <p class="font-italic">
                     Need a printable version of my CV?<br />
                     Download it here.
-                    <a href="#" target="_blank" class="cv-pdf">
+                    <a href="{{ url_for('static', filename='pdf/nahed- resume.pdf') }}" target="_blank">
                         <i class="fa fa-download icon-footer fa-2x" aria-hidden="true"></i>
                         <span class="sr-only">Download link.</span>
                     </a>
@@ -100,16 +99,19 @@
             </div>
             <div class="col-md-3 pl-4">
                 <h5 class="uppercase">Popular links </h5>
-                <a href="#" class="footer-link font-italic">FAQ's</a><br>
-                <a href="#" class="footer-link font-italic">Privacy Policy</a><br>
-                <a href="#" class="footer-link font-italic">Create an account</a><br>
-                <a href="#" class="footer-link font-italic">Log in</a>
+                <a href="{{ url_for('faq') }}" class="footer-link font-italic">FAQ's</a><br>
+                <a href="{{ url_for('privacy') }}" class="footer-link font-italic">Privacy Policy</a><br>
+                <a href="{{ url_for('profile') }}" class="footer-link font-italic">My Profile</a><br>
+                <a href="{{ url_for('register') }}" class="footer-link font-italic">Create an account</a><br>
+                <a href= "{{ url_for('login') }}" class="footer-link font-italic">Log in</a>
             </div>
         </div>
         <hr>
         <div class="row">
-            
-            <div class=" col-md-9 ">
+            <div class=" col-md-4 ">
+                <small class="pt-5">Copyright 2020 all rights reserved</small>
+            </div>
+            <div class="  col-md-4 text-center">
                 <h5 class="uppercase ">Stay Connected</h5>
                 <a  href="https://www.facebook.com/" target="_blank"
                     aria-label=" Facebook" rel="noopener">
@@ -128,8 +130,8 @@
                     <i class="fab fa-github icon-color fa-2x" p-1></i>
                 </a>
             </div>
-            <div class=" col-md-3 align-bottom">
-                <small class="pt-5">Copyright 2020 all rights reserved</small>
+            <div class=" col-md-4 ">
+                <small class="pt-5">Disclaimer: The content of this website is educational purposes only</small>
             </div>
         </div>
 

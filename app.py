@@ -350,10 +350,16 @@ def delete_skill(skill_id):
         return redirect(url_for("manage_profile", username=username))
 
 
-# Route for search in portfolios page
+# Route for privacy page
 @app.route("/privacy")
 def privacy():
     return render_template("privacy.html")
+
+
+# Route for FAQ page
+@app.route("/faq")
+def faq():
+    return render_template("faq.html")
 
 
 if __name__ == "__main__":
