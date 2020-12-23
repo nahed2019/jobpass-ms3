@@ -364,6 +364,7 @@ To test the CRUDs functionalities:
 - CSS was checked on [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input).
 - My JavaScript code passes through a linter (jshint.com) with no major issues.[jshint.com](https://jshint.com/)
 - JSON was checked on [JSON Validator](https://jsonlint.com/).
+- python was checked on [PEP8 online](http://pep8online.com/) .
 - [Browserstack](https://www.browserstack.com/) to test functionality on all browsers and devices.
 
 ### Manual Testing
