@@ -37,8 +37,6 @@ The website is fully responsive, has a consistent flow and intuitive navigation.
     - [Database choice](#database-choice)
     - [Data Storage Types](#data-storage-types)
     - [Collections Data Structure](#collections-data-structure)
-        - [Users Collection](#users-collection)
-        - [ Collection](#collection)
 
 
 4. [Technologies Used](#technologies-used)
@@ -106,12 +104,12 @@ Visitor Goals:
  ## Design
 
  #### Colour Scheme
-          The main colors used are: #4a6274 , #f3a7a7
-          The body background : linear-gradient(to left, #4a6274, #d9e5ee)
+- The main colors used are: #4a6274 , #f3a7a7
+- The body background : linear-gradient(to left, #4a6274, #d9e5ee)
             
 #### Typography
-        -   The "Roboto" font is the main fonts used throughout the whole website with "font-italic" class for some paragraph .
-        - Sans Serif as the fallback font in case for any reason the font is not being imported into the site correctly.
+- The "Roboto" font is the main fonts used throughout the whole website with "font-italic" class for some paragraph .
+- Sans Serif as the fallback font in case for any reason the font is not being imported into the site correctly.
     
 
 ## Wireframes
@@ -129,26 +127,25 @@ Visitor Goals:
 ###  In all pages
 - Navbar:
 
-        For visitors to the site who are not logged in/Registered
-        list items links are available for them to use:
-        1. My profile
-        2. Portfolios 
-        3. Log in 
-        4. Register
+For visitors to the site who are not logged in/Registered list items links are available for them to use:
+1. My profile
+2. Portfolios 
+3. Log in 
+4. Register
        
-      For users who are logged in/Registered: 
-        1. My profile
-        2. Portfolios
-        3. New Profile
-        4. Manage Profile
-        5. Log out
+For users who are logged in/Registered: 
+1. My profile
+2. Portfolios
+3. New Profile
+4. Manage Profile
+5. Log out
 
-    - Python determines if the user is logged in or not by checking `if 'user' in session` and passes this data to Jinja to display the correct navbar for the user.
+- Python determines if the user is logged in or not by checking `if 'user' in session` and passes this data to Jinja to display the correct navbar for the user.
 
-    - The navbar is collapsed into a burger icon on small and medium screens.
+- The navbar is collapsed into a burger icon on small and medium screens.
     
 -  Floating to top button:
-    - A floating button appears on the lower right of the screen when the user starts to scroll downwards. Clicking this moves the view back up to the top of the page. I added this feature because some pages can be quite long and the navbar is not fixed to the top of the page.
+ A floating button appears on the lower right of the screen when the user starts to scroll downwards. Clicking this moves the view back up to the top of the page. I added this feature because some pages can be quite long and the navbar is not fixed to the top of the page.
 
 - Footer
     - The footer features:
@@ -216,9 +213,9 @@ The Register page also features a simple **form** where the user can enter usern
 
 # Information Architecture
 ### Database Choice
-    This project utilizes two types of Data:
-        1. The NoSQL database MongoDB.
-        2. Local JSON Files      
+This project utilizes two types of Data:
+1. The NoSQL database MongoDB.
+2. Local JSON Files      
 
 ### Data Storage Types
 
@@ -235,7 +232,7 @@ The JobPass website relies on 6 database collections:
 #### Users Collection
 
 | Title | Key in db | Data type |
-|------ | --- ------| --- ------|  
+|------ |------| ------|  
 |Account ID | _id |  ObjectId| 
 |Name | username  | string |
 |Password | password  | string |
@@ -295,8 +292,8 @@ The JobPass website relies on 6 database collections:
 
 
 #### The types of data stored in local json files for this project are:
-[project JSON ](data/projects.json)
-[skills JSON ](data/skills.json)
+- [project JSON ](data/projects.json)
+- [skills JSON ](data/skills.json)
 
 projects data:
 
@@ -363,8 +360,8 @@ To test the CRUDs functionalities:
 
 ## Testing
 ### Validation Services
-- HTML was checked on [HTML Validator](https://jigsaw.w3.org/css-validator/#validate_by_input).
-- CSS was checked on [W3C Markup Validator](https://validator.w3.org/) .
+- HTML was checked on [HTML Validator](https://validator.w3.org/) .
+- CSS was checked on [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input).
 - My JavaScript code passes through a linter (jshint.com) with no major issues.[jshint.com](https://jshint.com/)
 - JSON was checked on [JSON Validator](https://jsonlint.com/).
 - [Browserstack](https://www.browserstack.com/) to test functionality on all browsers and devices.
@@ -379,28 +376,28 @@ To test the CRUDs functionalities:
 The following section goes through each of the user stories from the UX section of User Stories:
 - As a user to JobPass I expect/want/need :
     - To easily find what I am looking for without being confused with what I need to click or where should I go:
-    * Simple and clear Navbar added at the top of the screen.
-    * The navbar shows the user appropriate links depending on if they are logged in or out.
-    * FAQ's added to the link in the footer to help the user.
+     Simple and clear Navbar added at the top of the screen.
+     The navbar shows the user appropriate links depending on if they are logged in or out.
+     FAQ's added to the link in the footer to help the user.
     - To register and create my own credentials with a click of a button:
-    * The register page features a simple form where the user can enter username, password and a register button.
+     The register page features a simple form where the user can enter username, password and a register button.
     - To easily manage my profile and update my existing Personal information, Work Experience, Projects, Skills, and Languages:
-    *  An option to edit or delete any of Projects & Work Experience and Skills is there near each information , it opens new page for edit information with information retrieved from MongoDB, based on the -ID. These fields can be altered to update an existing information.
+     An option to edit or delete any of Projects & Work Experience and Skills is there near each information , it opens new page for edit information with information retrieved from MongoDB, based on the -ID. These fields can be altered to update an existing information.
     - To be able to contact the developer/site owner whenever a support is needed:
-    * In contact section/My profile After filling all necessary information,an email is successfully send and a toast message is shown above the form confirming the email was sent.
+     In contact section/My profile After filling all necessary information,an email is successfully send and a toast message is shown above the form confirming the email was sent.
     - To have an easy access to Contact Information, Phone Numbers, email addresses, and Social Media links
-    * In the contact form and the footer of the page, you will find all information in clear and simple way.
+     In the contact form and the footer of the page, you will find all information in clear and simple way.
     - To be able to access Jobpass from a mobile phone or tablet and to be easy to navigate and use on my smaller devices.
-    * JobPass was designed to be responsive and work well on mobile, tablet and desktop devices.
+     JobPass was designed to be responsive and work well on mobile, tablet and desktop devices.
 
 
 - As a recruiter, I expect/want/need:
     - To easily search for job seekers with the ability to contact them directly
-    * In Portfolios page/ search bar where you can search with Current Work, Education, or Address to find the business cards of any job seeker
+     In Portfolios page/ search bar where you can search with Current Work, Education, or Address to find the business cards of any job seeker
     - To be able to contact the developer/site owner whenever a support is needed
-    * In the contact form and the footer of the page, you will find all information in a clear and simple way.
+      In the contact form and the footer of the page, you will find all information in a clear and simple way.
     - An easy access to the contact information, phone number and email for the people I am looking for.
-    * Business cards for all users who successfully registered and created their own profiles. Business card will include below details:
+      Business cards for all users who successfully registered and created their own profiles. Business card will include below details:
         Current work
         Phone Number
         Email Address
@@ -410,9 +407,9 @@ The following section goes through each of the user stories from the UX section 
 
 -  As a freelance developer, I expect/want/need:
     - To find the developer’s last projects with the ability to check them with a click of a button
-    * In My Profile/ Project section, the user will find the projects I have worked on recently. It contains an image of the project in a desktop screen along with a brief description of the project and two buttons for the project's GitHub repository and the project's live website.
+     In My Profile/ Project section, the user will find the projects I have worked on recently. It contains an image of the project in a desktop screen along with a brief description of the project and two buttons for the project's GitHub repository and the project's live website.
     - To easily get in touch with site developer or owner via contact form
-    * In the contact form and the footer of the page, you will find all information in a clear and simple way.
+     In the contact form and the footer of the page, you will find all information in a clear and simple way.
 
 
 ### Bugs
@@ -427,6 +424,8 @@ The following section goes through each of the user stories from the UX section 
 Issue has fixed by adding <link rel="shortcut icon" href="#" /> to the header section.
 Credit: I got help from (https://stackoverflow.com/questions/39149846/why-am-i-seeing-a-404-not-found-error-failed-to-load-favicon-ico-when-not-usin)
 
+3. In contact form , flash massage didnt work with <onsubmit> function because of <method= post>
+Issue has fixed by adding alert to sendEmail function and removed falsh massage. 
 
 ### Unsolved bugs
 

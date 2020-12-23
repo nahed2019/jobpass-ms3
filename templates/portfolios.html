@@ -5,24 +5,22 @@
 <div class="row justify-content-center card col-md-8 offset-md-2 custom-card mb-5">
     <form action="{{ url_for('search') }}" method="post" class="col">
         <div class="row">
-            <div class="input-field form-control-lg  col-lg-8 ">
+            <div class="input-field form-control-lg  col-md-8 pt-3">
                 <i class="fas fa-search "></i>
                 <input type="text" name="query" id="query" minlength="2" class="validate input-border"
                     placeholder="Search Profile Card by Education, Job or Address " style="width: 90%" required>
             </div>
-            <div class="col-lg-2 ">
-                <a href="{{ url_for('portfolios') }}" class="btn btn-search">Reset</a>
-            </div>   
-            <div class="col-lg-2 ">
+            <div class="col-md-4 text-center">
                 <button type="submit" class="btn btn-search">
                     <i class="fas fa-search "></i> Search
                 </button>
+                <a href="{{ url_for('portfolios') }}" class="btn btn-search">Reset</a>
             </div>
         </div>
     </form>
 </div>
 {% if basics|length > 0 %}
-<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center ">
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center mx-2 ">
     {% for basic in basics %}
     <div class="card card-bg card-shop">
         <div class="card-body">
