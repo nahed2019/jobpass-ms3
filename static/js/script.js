@@ -43,21 +43,20 @@ $(function() {
 
     if (value > 0) {
       if (value <= 50) {
-        right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+        right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)');
       } else {
-        right.css('transform', 'rotate(180deg)')
-        left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+        right.css('transform', 'rotate(180deg)');
+        left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)');
       }
     }
 
-  })
+  });
 
   function percentageToDegrees(percentage) {
 
-    return percentage / 100 * 360
+    return percentage / 100 * 360;
 
   }
-
 });
 
 /* credit: code for add-edit-and-delete-buttons taken from https://bootstrapious.com/p/bootstrap-add-edit-and-delete-buttons and edited to fit project needs */
