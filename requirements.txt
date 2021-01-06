@@ -1,5 +1,5 @@
 cairocffi==1.2.0
-CairoSVG==2.5.0
+CairoSVG==2.5.1
 click==7.1.2
 cssselect2==0.4.1
 dnspython==2.0.0
