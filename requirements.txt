@@ -8,7 +8,7 @@ Flask-PyMongo==2.3.0
 html5lib==1.1
 itsdangerous==1.1.0
 pdfkit==0.6.1
-Pillow==8.0.1
+Pillow==8.3.2
 pymongo==3.11.1
 Pyphen==0.10.0
 tinycss2==1.1.0
